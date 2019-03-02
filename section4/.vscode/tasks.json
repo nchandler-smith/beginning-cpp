@@ -20,8 +20,18 @@
             }
         },
         {
+            "label": "build First Program",
+            "type": "shell",
+            "command": "./build.sh ./first-program/src/main.cpp main",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
             "label": "build all",
-            "dependsOn":["build Project 1", "build Project 2"],
+            "dependsOn":["build Project 1", 
+                         "build Project 2", 
+                         "build First Program"],
             "group": {
                 "kind": "build"
             }
@@ -43,9 +53,18 @@
             }
         },
         {
+            "label": "build and run First Program",
+            "type": "shell",
+            "command": "./build.sh ./first-program/src/main.cpp main -r",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
             "label": "build and run all",
             "dependsOn":["build and run Project 1",
-                         "build and run Project 2"],
+                         "build and run Project 2",
+                         "build and run First Program"],
             "group": {
                 "kind": "build"
             }
