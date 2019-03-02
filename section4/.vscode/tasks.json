@@ -1,0 +1,54 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build Project 1",
+            "type": "shell",
+            "command": "./build.sh ./project1/src/main.cpp main",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build Project 2",
+            "type": "shell",
+            "command": "./build.sh ./project2/src/main.cpp main",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build all",
+            "dependsOn":["build Project 1", "build Project 2"],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build and run Project 1",
+            "type": "shell",
+            "command": "./build.sh ./project1/src/main.cpp main -r",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build and run Project 2",
+            "type": "shell",
+            "command": "./build.sh ./project2/src/main.cpp main -r",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "build and run all",
+            "dependsOn":["build and run Project 1",
+                         "build and run Project 2"],
+            "group": {
+                "kind": "build"
+            }
+        }
+    ]
+}
