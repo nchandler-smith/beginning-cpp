@@ -4,69 +4,74 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build Project 1",
+            "label": "compile Project 1",
             "type": "shell",
-            "command": "./build.sh ./project1/src/main.cpp main",
+            "command": "./compile.sh ./project1/src/main.cpp main",
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build Project 2",
+            "label": "compile Project 2",
             "type": "shell",
-            "command": "./build.sh ./project2/src/main.cpp main",
+            "command": "./compile.sh ./project2/src/main.cpp main",
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build First Program",
+            "label": "compile First Program",
             "type": "shell",
-            "command": "./build.sh ./first-program/src/main.cpp main",
+            "command": "./compile.sh ./first-program/src/main.cpp main",
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build all",
-            "dependsOn":["build Project 1", 
-                         "build Project 2", 
-                         "build First Program"],
+            "label": "compile all",
+            "dependsOn": [
+                "compile Project 1",
+                "compile Project 2",
+                "compile First Program"
+            ],
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build and run Project 1",
+            "label": "compile and run Project 1",
             "type": "shell",
-            "command": "./build.sh ./project1/src/main.cpp main -r",
+            "command": "./compile.sh ./project1/src/main.cpp main -r",
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build and run Project 2",
+            "label": "compile and run Project 2",
             "type": "shell",
-            "command": "./build.sh ./project2/src/main.cpp main -r",
+            "command": "./compile.sh ./project2/src/main.cpp main -r",
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build and run First Program",
+            "label": "compile and run First Program",
             "type": "shell",
-            "command": "./build.sh ./first-program/src/main.cpp main -r",
+            "command": "./compile.sh ./first-program/src/main.cpp main -r",
             "group": {
-                "kind": "build"
+                "kind": "compile"
             }
         },
         {
-            "label": "build and run all",
-            "dependsOn":["build and run Project 1",
-                         "build and run Project 2",
-                         "build and run First Program"],
+            "label": "compile and run all",
+            "dependsOn": [
+                "compile and run Project 1",
+                "compile and run Project 2",
+                "compile and run First Program"
+            ],
             "group": {
-                "kind": "build"
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]

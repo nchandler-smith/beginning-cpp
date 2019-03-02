@@ -1,10 +1,10 @@
 #! /bin/sh
 
-build_file=$1
+compile_file=$1
 output_file=$2
 
-g++ -Wall -std=c++14 $build_file -o $output_file
-echo "Built $build_file output as $output_file"
+g++ -Wall -std=c++14 $compile_file -o $output_file
+echo "Compiled $compile_file output as $output_file"
 
 OPTIND=3
 while getopts "r" VALUE "$@" ; do
