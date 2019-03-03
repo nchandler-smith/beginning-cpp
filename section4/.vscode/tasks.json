@@ -36,12 +36,21 @@
             }
         },
         {
+            "label": "compile Challenge",
+            "type": "shell",
+            "command": "./compile.sh ./challenge/src/main.cpp main",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
             "label": "build",
             "dependsOn": [
                 "compile Project 1",
                 "compile Project 2",
                 "compile First Program",
-                "compile Compiler Warnings"
+                "compile Compiler Warnings",
+                "compile Challenge"
             ],
             "group": {
                 "kind": "build"
@@ -80,12 +89,21 @@
             }
         },
         {
+            "label": "compile and run Challenge",
+            "type": "shell",
+            "command": "./compile.sh ./challenge/src/main.cpp main -r",
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
             "label": "build and run all",
             "dependsOn": [
                 "compile and run Project 1",
                 "compile and run Project 2",
                 "compile and run First Program",
-                "compile and run Compiler Warnings"
+                "compile and run Compiler Warnings",
+                "compile and run Challenge"
             ],
             "group": {
                 "kind": "build",
