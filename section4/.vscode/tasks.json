@@ -6,7 +6,7 @@
         {
             "label": "compile Project 1",
             "type": "shell",
-            "command": "./compile.sh ./project1/src/main.cpp main",
+            "command": "./compile.sh ./project1/src/main.cpp ./project1/src/main.o",
             "group": {
                 "kind": "build"
             }
@@ -14,7 +14,7 @@
         {
             "label": "compile Project 2",
             "type": "shell",
-            "command": "./compile.sh ./project2/src/main.cpp main",
+            "command": "./compile.sh ./project2/src/main.cpp ./project2/src/main.o",
             "group": {
                 "kind": "build"
             }
@@ -22,7 +22,7 @@
         {
             "label": "compile First Program",
             "type": "shell",
-            "command": "./compile.sh ./first-program/src/main.cpp main",
+            "command": "./compile.sh ./first-program/src/main.cpp ./first-program/src/main.o",
             "group": {
                 "kind": "build"
             }
@@ -30,7 +30,7 @@
         {
             "label": "compile Compiler Warnings",
             "type": "shell",
-            "command": "./compile.sh ./compiler-warnings/src/main.cpp main",
+            "command": "./compile.sh ./compiler-warnings/src/main.cpp ./compiler-warnings/src/main.o",
             "group": {
                 "kind": "build"
             }
@@ -38,7 +38,7 @@
         {
             "label": "compile Challenge",
             "type": "shell",
-            "command": "./compile.sh ./challenge/src/main.cpp main",
+            "command": "./compile.sh ./challenge/src/main.cpp ./challenge/src/main.o",
             "group": {
                 "kind": "build"
             }
@@ -58,40 +58,45 @@
         },
         {
             "label": "compile and run Project 1",
+            "dependsOn":["compile Project 1"],
             "type": "shell",
-            "command": "./compile.sh ./project1/src/main.cpp main -r",
+            "command": "./project1/src/main.o ",
             "group": {
                 "kind": "build"
             }
         },
         {
             "label": "compile and run Project 2",
+            "dependsOn":["compile Project 2"],
             "type": "shell",
-            "command": "./compile.sh ./project2/src/main.cpp main -r",
+            "command": "./project2/src/main.o",
             "group": {
                 "kind": "build"
             }
         },
         {
             "label": "compile and run First Program",
+            "dependsOn":["compile First Program"],
             "type": "shell",
-            "command": "./compile.sh ./first-program/src/main.cpp main -r",
+            "command": "./first-program/src/main.o",
             "group": {
                 "kind": "build"
             }
         },
         {
             "label": "compile and run Compiler Warnings",
+            "dependsOn":["compile Compiler Warnings"],
             "type": "shell",
-            "command": "./compile.sh ./compiler-warnings/src/main.cpp main -r",
+            "command": "./compiler-warnings/src/main.o",
             "group": {
                 "kind": "build"
             }
         },
         {
             "label": "compile and run Challenge",
+            "dependsOn":["compile Challenge"],
             "type": "shell",
-            "command": "./compile.sh ./challenge/src/main.cpp main -r",
+            "command": "./challenge/src/main.o",
             "group": {
                 "kind": "build"
             }
