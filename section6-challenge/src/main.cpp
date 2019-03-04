@@ -25,7 +25,29 @@ int main() {
 	int numberLargeRooms {0};
 	cin >> numberLargeRooms;
 
-	cout << "\nEstimate for carpet cleaning service";
+	cout << "\nEstimate for carpet cleaning service" << endl;
+	cout << "Number of small rooms: " << numberSmallRooms << endl;
+	cout << "Number of large rooms: " << numberLargeRooms << endl;
+	cout << "Price per small room: $" << smallRoomCharge << endl;
+	cout << "Price per large room: $" << largeRoomCharge  << endl;
+	
+	cout << "Cost: $";
+	double smallRoomCost = smallRoomCharge * numberSmallRooms;
+	double largeRoomCost = largeRoomCharge * numberLargeRooms;
+	double cost = smallRoomCost + largeRoomCost;
+	cout << cost << endl;
+	
+	cout << "Tax: $";
+	double tax = tax_rate * cost;
+	cout << tax << endl;
+	
+	cout << "=================================" << endl;
+
+	cout << "Total estimate: $";
+	double totalEstimate = cost + tax;
+	cout << totalEstimate << endl;
+	
+	cout << "This estimate is valid for " << estimate_experiation << " days." << endl;
 
 	cout << "\n*******************************" << endl;
 
