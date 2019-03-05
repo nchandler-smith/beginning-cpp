@@ -13,6 +13,7 @@ int main() {
 	vector1.push_back(20);
 	cout << "vector 1 first element: " << vector1.at(0) << endl;
 	cout << "vector 1 second element: " << vector1.at(1) << endl;
+	cout << "vector 1 contains " << vector1.size() << " elements." << endl;
 	cout << endl;
 
 	vector <int> vector2;
@@ -20,6 +21,7 @@ int main() {
 	vector2.push_back(200);
 	cout << "vector 2 first element: " << vector2.at(0) << endl;
 	cout << "vector 2 second element: " << vector2.at(1) << endl;
+	cout << "vector 2 contains " << vector2.size() << " elements." << endl;
 	cout << endl;
 
 	vector <vector <int>> vector2D;
@@ -40,7 +42,6 @@ int main() {
 
 	cout << "vector 1 first element: " << vector1.at(0) << endl;
 	cout << "vector 1 second element: " << vector1.at(1) << endl;
-	cout << endl;
 
 	return 0;
 } 
