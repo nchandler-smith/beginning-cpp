@@ -14,7 +14,7 @@ else
 	OPTIND=3
 	while getopts "r" VALUE "$@" ; do
 		flag=$VALUE
-		if [ "$flag" = "r"  ] ; then
+		if [ "$flag" == "r" ] && [ $compilation_status == 0 ]; then
 			echo "running ..."
 			./$output_file
 			run_status=$?
@@ -22,6 +22,7 @@ else
 	done
 fi
 
+echo "\n"
 echo "compilation exit code: $compilation_status"
 if [[ $run_status ]]; then
 	echo "run exit code: $run_status"
