@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build main",
+            "type": "shell",
+            "command": "./compile.sh ./src/main.cpp ./src/main.o",
+        },
+        {
+            "label": "build and run main",
+            "type": "shell",
+            "command": "./compile.sh ./src/main.cpp ./src/main.o -r",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
