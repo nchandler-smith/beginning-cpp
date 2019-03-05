@@ -10,9 +10,8 @@
         },
         {
             "label": "build and run main",
-            "dependsOn":["build main"],
             "type": "shell",
-            "command": "./src/main.o",
+            "command": "./compile.sh ./src/main.cpp ./src/main.o -r",
             "group": {
                 "kind": "build",
                 "isDefault": true
