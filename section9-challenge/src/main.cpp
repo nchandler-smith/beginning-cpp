@@ -10,6 +10,7 @@ void displayMenu();
 char getActionFromUser();
 void printNumbers(vector<int> *numbers_ptr);
 void takeAction(char action, vector<int> *numbers_ptr);
+void addNumber(vector<int> *numbers_ptr);
 
 int main() {
 
@@ -17,10 +18,10 @@ int main() {
 	cout << "\nHello, please select from the following options:" << endl;
 	
 	bool done;
+	vector <int> numbers {};
 	
 	do {
 		char action;
-		vector <int> numbers {};
 
 		displayMenu();
 		action = getActionFromUser();
@@ -54,18 +55,24 @@ void takeAction(char action, vector<int> *numbers_ptr) {
 	switch (action)
 	{
 		case 'P': printNumbers(numbers_ptr); break;
+		case 'A': addNumber(numbers_ptr); break;
 		default:
 			break;
 	}
 }
 
 void printNumbers(vector<int> *numbers_ptr) {
-	if (numbers_ptr->size() > 0) {
-		cout << "[ ";
-		for (int number : *numbers_ptr)
-			cout << number << " ";
-		cout << " ]" << endl;
-	} else {
-		cout << "No numbers entered." << endl;
-	}
+	cout << "[ ";
+	for (int number : *numbers_ptr)
+		cout << number << " ";
+	cout << "]" << endl;
+}
+
+void addNumber(vector<int> *numbers_ptr) {
+	cout << "Enter integer to add to the list: ";
+	int inputNumber {};
+	cin >> inputNumber;
+	numbers_ptr->push_back(inputNumber);
+	cout << "\n" << inputNumber <<" added.";
+	cout << "Vector size: " << numbers_ptr->size() << endl;
 }
