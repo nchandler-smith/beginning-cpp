@@ -11,6 +11,7 @@ char getActionFromUser();
 void printNumbers(vector<int> *numbers_ptr);
 void takeAction(char action, vector<int> *numbers_ptr);
 void addNumber(vector<int> *numbers_ptr);
+void printMean(vector<int> *numbers_ptr);
 
 int main() {
 
@@ -56,6 +57,7 @@ void takeAction(char action, vector<int> *numbers_ptr) {
 	{
 		case 'P': printNumbers(numbers_ptr); break;
 		case 'A': addNumber(numbers_ptr); break;
+		case 'M': printMean(numbers_ptr); break;
 		default:
 			break;
 	}
@@ -73,6 +75,15 @@ void addNumber(vector<int> *numbers_ptr) {
 	int inputNumber {};
 	cin >> inputNumber;
 	numbers_ptr->push_back(inputNumber);
-	cout << "\n" << inputNumber <<" added.";
-	cout << "Vector size: " << numbers_ptr->size() << endl;
+	cout << "\n" << inputNumber <<" added." << endl;
+}
+
+void printMean(vector<int> *numbers_ptr) {
+	double mean {};
+	double sum {};
+
+	for (int number : *numbers_ptr)
+		sum += number;
+	mean = sum / numbers_ptr->size();
+	cout << "The mean is: " << mean << endl;
 }
