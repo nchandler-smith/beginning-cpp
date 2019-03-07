@@ -23,7 +23,7 @@ int main() {
 		vector <int> numbers {};
 
 		displayMenu();
-		action = std::toupper(getActionFromUser());
+		action = getActionFromUser();
 		takeAction(action, numbers);
 		(action == 'Q') ? done=1 : done=0;
 	} while (!done);
@@ -44,7 +44,7 @@ void displayMenu() {
 }
 
 char getActionFromUser() {
-	cout << "Please enter your choice: ";
+	cout << "\nPlease enter your choice: ";
 	char action {};
 	cin >> action;
 	return std::toupper(action);
@@ -54,6 +54,7 @@ void takeAction(char action, vector<int> numbers) {
 	switch (action)
 	{
 		case 'P': printNumbers(numbers); break;
+		// case 'A': addNumber(&numbers); break;
 		default:
 			break;
 	}
