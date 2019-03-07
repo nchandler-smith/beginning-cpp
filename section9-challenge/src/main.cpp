@@ -6,42 +6,10 @@ using std::cin;
 using std::endl;
 using std::vector;
 
-void displayMenu() {
-	cout <<"\n";
-	cout << "P - Print numbers" << endl;
-	cout << "A - Add a number" << endl;
-	cout << "M - Display mean of the numbers" << endl;
-	cout << "S - Display the smallest number" << endl;
-	cout << "L - Display the largest number" << endl;
-	cout << "Q - Quit \n" << endl;
-}
-
-char getActionFromUser() {
-	cout << "Please enter your choice: ";
-	char action {};
-	cin >> action;
-	return action;
-}
-
-void printNumbers(vector<int> numbers) {
-	if (numbers.size() > 0) {
-		cout << "[ ";
-		for (int number : numbers)
-			cout << number << " ";
-		cout << " ]" << endl;
-	} else {
-		cout << "No numbers entered." << endl;
-	}
-}
-
-void takeAction(char action, vector<int> numbers) {
-	switch (action)
-	{
-		case 'P': printNumbers(numbers); break;
-		default:
-			break;
-	}
-}
+void displayMenu();
+char getActionFromUser();
+void printNumbers(vector<int> numbers);
+void takeAction(char action, vector<int> numbers);
 
 int main() {
 
@@ -63,4 +31,41 @@ int main() {
 	cout << "\n ---------- End Integer list Processor ----------" << endl;
 
 	return 0;
+}
+
+void displayMenu() {
+	cout <<"\n";
+	cout << "P - Print numbers" << endl;
+	cout << "A - Add a number" << endl;
+	cout << "M - Display mean of the numbers" << endl;
+	cout << "S - Display the smallest number" << endl;
+	cout << "L - Display the largest number" << endl;
+	cout << "Q - Quit \n" << endl;
+}
+
+char getActionFromUser() {
+	cout << "Please enter your choice: ";
+	char action {};
+	cin >> action;
+	return std::toupper(action);
+}
+
+void takeAction(char action, vector<int> numbers) {
+	switch (action)
+	{
+		case 'P': printNumbers(numbers); break;
+		default:
+			break;
+	}
+}
+
+void printNumbers(vector<int> numbers) {
+	if (numbers.size() > 0) {
+		cout << "[ ";
+		for (int number : numbers)
+			cout << number << " ";
+		cout << " ]" << endl;
+	} else {
+		cout << "No numbers entered." << endl;
+	}
 }
