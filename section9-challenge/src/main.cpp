@@ -12,6 +12,8 @@ void printNumbers(vector<int> *numbers_ptr);
 void takeAction(char action, vector<int> *numbers_ptr);
 void addNumber(vector<int> *numbers_ptr);
 void printMean(vector<int> *numbers_ptr);
+void printSmallest(vector<int> *numbers_ptr);
+void printLargest(vector<int> *numbers_ptr);
 
 int main() {
 
@@ -58,8 +60,9 @@ void takeAction(char action, vector<int> *numbers_ptr) {
 		case 'P': printNumbers(numbers_ptr); break;
 		case 'A': addNumber(numbers_ptr); break;
 		case 'M': printMean(numbers_ptr); break;
-		default:
-			break;
+		case 'S': printSmallest(numbers_ptr); break;
+		case 'L': printLargest(numbers_ptr); break;
+		default: cout << "\nIllegal entry: " << action << "\nTry again."<< endl; break;
 	}
 }
 
@@ -85,5 +88,21 @@ void printMean(vector<int> *numbers_ptr) {
 	for (int number : *numbers_ptr)
 		sum += number;
 	mean = sum / numbers_ptr->size();
-	cout << "The mean is: " << mean << endl;
+	cout << "The mean is " << mean << "." << endl;
+}
+
+void printSmallest(vector<int> *numbers_ptr) {
+	int smallest = std::numeric_limits<int>::max();
+	for (int number : *numbers_ptr)
+		if (number < smallest)
+			smallest = number;
+	cout << "The smallest number is " << smallest << "." << endl;
+}
+
+void printLargest(vector<int> *numbers_ptr) {
+	int largest = std::numeric_limits<int>::min();
+	for (int number : *numbers_ptr)
+		if (number > largest)
+			largest = number;
+	cout << "The largest number is " << largest << "." << endl;
 }
