@@ -8,8 +8,8 @@ using std::vector;
 
 void displayMenu();
 char getActionFromUser();
-void printNumbers(vector<int> numbers);
-void takeAction(char action, vector<int> numbers);
+void printNumbers(vector<int> *numbers_ptr);
+void takeAction(char action, vector<int> *numbers_ptr);
 
 int main() {
 
@@ -24,7 +24,7 @@ int main() {
 
 		displayMenu();
 		action = getActionFromUser();
-		takeAction(action, numbers);
+		takeAction(action, &numbers);
 		(action == 'Q') ? done=1 : done=0;
 	} while (!done);
 	
@@ -50,20 +50,19 @@ char getActionFromUser() {
 	return std::toupper(action);
 }
 
-void takeAction(char action, vector<int> numbers) {
+void takeAction(char action, vector<int> *numbers_ptr) {
 	switch (action)
 	{
-		case 'P': printNumbers(numbers); break;
-		// case 'A': addNumber(&numbers); break;
+		case 'P': printNumbers(numbers_ptr); break;
 		default:
 			break;
 	}
 }
 
-void printNumbers(vector<int> numbers) {
-	if (numbers.size() > 0) {
+void printNumbers(vector<int> *numbers_ptr) {
+	if (numbers_ptr->size() > 0) {
 		cout << "[ ";
-		for (int number : numbers)
+		for (int number : *numbers_ptr)
 			cout << number << " ";
 		cout << " ]" << endl;
 	} else {
