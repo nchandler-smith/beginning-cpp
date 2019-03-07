@@ -82,6 +82,12 @@ void addNumber(vector<int> *numbers_ptr) {
 }
 
 void printMean(vector<int> *numbers_ptr) {
+
+	if (numbers_ptr->size() == 0) {
+		cout << "No data. Unable to calculate mean." << endl;
+		return;
+	}
+
 	double mean {};
 	double sum {};
 
