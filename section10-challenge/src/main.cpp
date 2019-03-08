@@ -20,8 +20,12 @@ int main() {
 
 	for (char c : inputMessage) {
 		size_t position = alphabet.find(c);
-		char lookupChar = key.at(position);
-		encryptedMessage += lookupChar;
+		if (position == std::string::npos) {
+			encryptedMessage += c;
+		} else {
+			char lookupChar = key.at(position);
+			encryptedMessage += lookupChar;
+		}
 	}
 
 	cout << "\nEncrypted message: " << endl;
