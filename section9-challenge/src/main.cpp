@@ -17,7 +17,7 @@ void printLargest(vector<int> *numbers_ptr);
 
 int main() {
 
-	cout << "\n ---------- Start Integer list Processor ----------" << endl;
+	cout << "\n ---------- Start Integer List Processor ----------" << endl;
 	cout << "\nHello, please select from the following options:" << endl;
 	
 	bool done;
@@ -32,7 +32,7 @@ int main() {
 		(action == 'Q') ? done=1 : done=0;
 	} while (!done);
 	
-	cout << "\n ---------- End Integer list Processor ----------" << endl;
+	cout << "\n ---------- End Integer List Processor ----------" << endl;
 
 	return 0;
 }
@@ -82,7 +82,6 @@ void addNumber(vector<int> *numbers_ptr) {
 }
 
 void printMean(vector<int> *numbers_ptr) {
-
 	if (numbers_ptr->size() == 0) {
 		cout << "No data. Unable to calculate mean." << endl;
 		return;
@@ -98,6 +97,11 @@ void printMean(vector<int> *numbers_ptr) {
 }
 
 void printSmallest(vector<int> *numbers_ptr) {
+	if (numbers_ptr->size() == 0) {
+		cout << "No data. Unable to calculate mean." << endl;
+		return;
+	}
+
 	int smallest = std::numeric_limits<int>::max();
 	for (int number : *numbers_ptr)
 		if (number < smallest)
@@ -106,6 +110,11 @@ void printSmallest(vector<int> *numbers_ptr) {
 }
 
 void printLargest(vector<int> *numbers_ptr) {
+	if (numbers_ptr->size() == 0) {
+		cout << "No data. Unable to calculate mean." << endl;
+		return;
+	}
+
 	int largest = std::numeric_limits<int>::min();
 	for (int number : *numbers_ptr)
 		if (number > largest)
