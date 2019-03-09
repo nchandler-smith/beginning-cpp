@@ -13,6 +13,7 @@ void printNumberList(const vector<int> &numberList);
 void addNumber(vector<int> &numberList);
 void displayMean(const vector<int> &numberList);
 void displaySmallest(const vector<int> &numberList);
+void displayLargest(const vector<int> &numberList);
 bool actionIsValid(const vector<int> &numberList);
 
 int main() {
@@ -58,7 +59,11 @@ void performAction(char action, vector<int> &numberList) {
 				displaySmallest(numberList);
 			break;
 		}
-		case 'L': cout << "L pressed" << endl; break;
+		case 'L': {
+			if (actionIsValid(numberList))
+				displayLargest(numberList);
+			break;
+		}
 		case 'Q': cout << "Quiting..." << endl; break;
 		default: cout << "Illegal action. Please try again." << endl;
 	}
@@ -95,6 +100,15 @@ void displaySmallest(const vector<int> &numberList) {
 			smallestNumber = number;
 	}
 	cout << "Smallest number in the list: " << smallestNumber << endl;
+}
+
+void displayLargest(const vector<int> &numberList) {
+	int largestNumber {numberList.at(0)};
+	for (int number: numberList) {
+		if (number > largestNumber)
+			largestNumber = number;
+	}
+	cout << "Smallest number in the list: " << largestNumber << endl;
 }
 
 bool actionIsValid(const vector<int> &numberList) {
