@@ -21,7 +21,7 @@ Each section of the course has one or more folders dedicated to it. These folder
 
 ## Using VSCode to build the project
 1. Open the project folder, e.g. _section9-challenge_.
-2. Cmd + T to open the run task tool.
+2. `Cmd + T` to open the run task tool.
 3. Backspace to clear any auto-populated characters.
 4. `task ` ("task" followed by a space) will open a drop down of the build options. Select build or build and run. These have been defined in the tasks.json.
 
@@ -32,10 +32,12 @@ This file has been configured to `build and run` or `build` main.cpp. It calls c
 
 ### compile.sh
 This file manages compiling and running main.cpp. It takes two aruments:
+
 	1. path to main.cpp
 	2. path of output binary
 
 ### create_project.sh
 This file sits in the root of the repo and is called to create a new project with the above directory tree, scripts, and source code.
 It takes one argument:
+
    1. The name of the project folder.
