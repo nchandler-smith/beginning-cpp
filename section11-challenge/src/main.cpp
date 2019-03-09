@@ -10,6 +10,7 @@ void displayMenu();
 char processEntry();
 void performAction(char action, vector<int> &numberList);
 void printNumberList(const vector<int> &numberList);
+void addNumber(vector<int> &numberList);
 
 int main() {
 	char action {};
@@ -43,7 +44,7 @@ char processEntry() {
 void performAction(char action, vector<int> &numberList) {
 	switch(action) {
 		case 'P': printNumberList(numberList); break;
-		case 'A': cout << "A pressed" << endl; break;
+		case 'A': addNumber(numberList); break;
 		case 'M': cout << "M pressed" << endl; break;
 		case 'S': cout << "S pressed" << endl; break;
 		case 'L': cout << "L pressed" << endl; break;
@@ -57,4 +58,12 @@ void printNumberList(const vector<int> &numberList) {
 	for(int number: numberList)
 		cout << number << " ";
 	cout << "]" << endl;
+}
+
+void addNumber(vector<int> &numberList) {
+	int newNumber {};
+	cout << "Enter integer to add to list: ";
+	cin >> newNumber;
+	numberList.push_back(newNumber);
+	cout << newNumber << " added to list. " << endl;
 }
