@@ -1,20 +1,24 @@
 #include <iostream>
+#include <vector>
 
 using std::cout;
 using std::endl;
 using std::cin;
+using std::vector;
 
 void displayMenu();
 char processEntry();
-bool performAction(char action);
+void performAction(char action, vector<int> &numberList);
+void printNumberList(const vector<int> &numberList);
 
 int main() {
 	char action {};
+	vector <int> numberList {};
 
 	do{
 		displayMenu();
 		action = processEntry();
-		performAction(action);
+		performAction(action, numberList);
 	} while (action != 'Q');
 	
 	return 0;
@@ -36,16 +40,21 @@ char processEntry() {
 	return std::toupper(userResponse);
 }
 
-bool performAction(char action){
-	
+void performAction(char action, vector<int> &numberList) {
 	switch(action) {
-		case 'P': cout << "P pressed" << endl; break;
+		case 'P': printNumberList(numberList); break;
 		case 'A': cout << "A pressed" << endl; break;
 		case 'M': cout << "M pressed" << endl; break;
 		case 'S': cout << "S pressed" << endl; break;
 		case 'L': cout << "L pressed" << endl; break;
 		case 'Q': cout << "Q pressed" << endl; break;
+		default: cout << "Illegal action. Please try again." << endl;
 	}
+}
 
-	return false;
+void printNumberList(const vector<int> &numberList) {
+	cout << "[ ";
+	for(int number: numberList)
+		cout << number << " ";
+	cout << "]" << endl;
 }
