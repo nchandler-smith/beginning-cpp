@@ -11,12 +11,13 @@ char processEntry();
 void performAction(char action, vector<int> &numberList);
 void printNumberList(const vector<int> &numberList);
 void addNumber(vector<int> &numberList);
+void displayMean(const vector<int> &numberList);
 
 int main() {
 	char action {};
 	vector <int> numberList {};
 
-	do{
+	do {
 		displayMenu();
 		action = processEntry();
 		performAction(action, numberList);
@@ -45,7 +46,7 @@ void performAction(char action, vector<int> &numberList) {
 	switch(action) {
 		case 'P': printNumberList(numberList); break;
 		case 'A': addNumber(numberList); break;
-		case 'M': cout << "M pressed" << endl; break;
+		case 'M': displayMean(numberList); break;
 		case 'S': cout << "S pressed" << endl; break;
 		case 'L': cout << "L pressed" << endl; break;
 		case 'Q': cout << "Q pressed" << endl; break;
@@ -55,15 +56,30 @@ void performAction(char action, vector<int> &numberList) {
 
 void printNumberList(const vector<int> &numberList) {
 	cout << "[ ";
-	for(int number: numberList)
+	for (int number: numberList)
 		cout << number << " ";
 	cout << "]" << endl;
 }
 
 void addNumber(vector<int> &numberList) {
 	int newNumber {};
+
 	cout << "Enter integer to add to list: ";
 	cin >> newNumber;
 	numberList.push_back(newNumber);
 	cout << newNumber << " added to list. " << endl;
 }
+
+void displayMean(const vector<int> &numberList) {
+	if (numberList.size() == 0) {
+		cout << "List is empty. Mean value is not defined." << endl;
+		return;
+	}
+
+	double sum {};
+	for (int number: numberList) {
+		sum += number;
+	}
+	cout << "Mean value of the list: " << sum/numberList.size() << endl;
+}
+
