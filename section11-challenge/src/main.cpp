@@ -11,11 +11,12 @@ bool performAction(char action);
 int main() {
 	char action {};
 
-	displayMenu();
-	action = processEntry();
-	performAction(action);
-	// loop or exit
-
+	do{
+		displayMenu();
+		action = processEntry();
+		performAction(action);
+	} while (action != 'Q');
+	
 	return 0;
 }
 
