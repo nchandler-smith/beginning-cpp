@@ -12,6 +12,8 @@ void performAction(char action, vector<int> &numberList);
 void printNumberList(const vector<int> &numberList);
 void addNumber(vector<int> &numberList);
 void displayMean(const vector<int> &numberList);
+void displaySmallest(const vector<int> &numberList);
+bool actionIsValid(const vector<int> &numberList);
 
 int main() {
 	char action {};
@@ -46,10 +48,18 @@ void performAction(char action, vector<int> &numberList) {
 	switch(action) {
 		case 'P': printNumberList(numberList); break;
 		case 'A': addNumber(numberList); break;
-		case 'M': displayMean(numberList); break;
-		case 'S': cout << "S pressed" << endl; break;
+		case 'M': {
+			if (actionIsValid(numberList))
+				displayMean(numberList);
+			break;
+		}
+		case 'S': {
+			if (actionIsValid(numberList))
+				displaySmallest(numberList);
+			break;
+		}
 		case 'L': cout << "L pressed" << endl; break;
-		case 'Q': cout << "Q pressed" << endl; break;
+		case 'Q': cout << "Quiting..." << endl; break;
 		default: cout << "Illegal action. Please try again." << endl;
 	}
 }
@@ -71,11 +81,6 @@ void addNumber(vector<int> &numberList) {
 }
 
 void displayMean(const vector<int> &numberList) {
-	if (numberList.size() == 0) {
-		cout << "List is empty. Mean value is not defined." << endl;
-		return;
-	}
-
 	double sum {};
 	for (int number: numberList) {
 		sum += number;
@@ -83,3 +88,20 @@ void displayMean(const vector<int> &numberList) {
 	cout << "Mean value of the list: " << sum/numberList.size() << endl;
 }
 
+void displaySmallest(const vector<int> &numberList) {
+	int smallestNumber {numberList.at(0)};
+	for (int number: numberList) {
+		if (number < smallestNumber)
+			smallestNumber = number;
+	}
+	cout << "Smallest number in the list: " << smallestNumber << endl;
+}
+
+bool actionIsValid(const vector<int> &numberList) {
+	bool actionValid {true};
+	if (numberList.size() == 0) {
+		cout << "List is empty. Action is not valid. Please try again." << endl;
+		actionValid = false;
+	}
+	return actionValid;
+}
