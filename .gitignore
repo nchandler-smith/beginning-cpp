@@ -1,1 +1,5 @@
-
+CMakeCache.txt
+CMakeFiles/
+Makefile
+challenge12
+cmake_install.cmake
