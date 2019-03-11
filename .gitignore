@@ -3,3 +3,6 @@ CMakeFiles/
 Makefile
 challenge12
 cmake_install.cmake
+CTestTestfile.cmake
+*_test
+googletest/
