@@ -37,12 +37,10 @@
 */
   
 #include <iostream>
+#include <string>
+#include "print.h"
 
 using namespace std;
-
-void print(const int array_in[], size_t array_size);
-int *apply_all(int array1_in[], size_t array1_size, 
-			   int array2_in[], size_t array2_size);
 
 int main() {
     const size_t array1_size {5};
@@ -68,15 +66,3 @@ int main() {
     return 0;
 }
 
-void print(const int array_in[], size_t array_size) {
-	cout << "[ ";
-	for(size_t i {}; i < array_size; i++) {
-		cout << (*array_in++) << " ";
-	}
-	cout << "]" << endl;
-}
-
-int *apply_all(int array1_in[], size_t array1_size, 
-			   int array2_in[], size_t array2_size) {
-				   return {};
-			   }

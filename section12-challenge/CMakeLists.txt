@@ -5,12 +5,11 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(challenge12 src/main.cpp)
+# Add googletest directly to our build. This defines
+# the gtest and gtest_main targets.
+add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest)
 
-enable_testing()
-find_package(GTest REQUIRED)
-include_directories(googletest/googletest/include)
-link_directories(googletest/lib)
+include_directories(src)
 
-add_executable(challenge12_test test/test_main.cpp)
-target_link_libraries(challenge12_test gtest)
+add_subdirectory(src)
+add_subdirectory(test)
