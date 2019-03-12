@@ -17,5 +17,10 @@ int *apply_all(int array1_in[], size_t array1_size,
 			   }
 
 string pretty_print(const int array_in[], size_t array_size) {
-  return "[0]";
+    string return_string {"[ "};
+    for(size_t i{}; i <array_size; i++) {
+        return_string += std::to_string(*(array_in++)) + " ";
+    }
+    return_string += "]";
+  return return_string;
 }
