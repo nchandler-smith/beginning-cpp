@@ -1,1 +1,11 @@
-
+CMakeCache.txt
+CMakeFiles/
+Makefile
+challenge12
+cmake_install.cmake
+CTestTestfile.cmake
+*_test
+googletest/
+lib/
+*.a
+main_tests

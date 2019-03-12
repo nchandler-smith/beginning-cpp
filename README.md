@@ -25,19 +25,10 @@ Each section of the course has one or more folders dedicated to it. These folder
 3. Backspace to clear any auto-populated characters.
 4. `task ` ("task" followed by a space) will open a drop down of the build options. Select build or build and run. These have been defined in the tasks.json.
 
-## Scripts
+## Build and test
 
-### tasks.json
-This file has been configured to `build and run` or `build` main.cpp. It calls compile.sh to do this.
-
-### compile.sh
-This file manages compiling and running main.cpp. It takes two aruments:
-
-	1. path to main.cpp
-	2. path of output binary
-
-### create_project.sh
-This file sits in the root of the repo and is called to create a new project with the above directory tree, scripts, and source code.
-It takes one argument:
-
-   1. The name of the project folder.
+Uses GoogleTest for unit testing.
+1. Download git repo to project folder, e.g. ./sectionxx/.
+2. Update `CMakeLists.txt`
+3. From the project folder run `cmake .`
+4. Then, `make`.
