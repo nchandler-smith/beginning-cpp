@@ -32,6 +32,14 @@ TEST (ApplyAllTest, GivenSingleAndMultipleValueArrays_ResultIsVectorDirectProduc
     EXPECT_TRUE(0 == std::memcmp(actual, result_array, sizeof(result_array)));
 }
 
+TEST (ApplyAllTest, GivenTwoMultipleValueArrays_ResultIsVectorDirectProduct) {
+    int test_array1[2] = {0, 1};
+    int test_array2[2] = {1, 2};
+    int result_array[4] = {0, 1, 0, 2};
+    int *actual {apply_all(test_array1, SIZEOF_ARRAY(test_array1), test_array2, SIZEOF_ARRAY(test_array1))};
+    EXPECT_TRUE(0 == std::memcmp(actual, result_array, sizeof(result_array)));
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
