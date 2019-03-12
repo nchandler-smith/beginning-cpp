@@ -4,14 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build main",
+            "label": "build tests",
             "type": "shell",
-            "command": "./compile.sh ./src/main.cpp ./src/main.o",
+            "command": "cmake . && make ",
         },
         {
-            "label": "build and run main",
+            "label": "build and run tests",
             "type": "shell",
-            "command": "./compile.sh ./src/main.cpp ./src/main.o -r",
+            "command": "cmake . && make &&  ./test/main_tests",
             "group": {
                 "kind": "build",
                 "isDefault": true
