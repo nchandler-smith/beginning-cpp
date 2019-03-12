@@ -17,5 +17,5 @@ int *apply_all(int array1_in[], size_t array1_size,
 			   }
 
 string pretty_print(const int array_in[], size_t array_size) {
-  return "Some string";
+  return "[0]";
 }
