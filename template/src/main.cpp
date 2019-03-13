@@ -1,3 +1,9 @@
+#include <iostream>
+#include "helper.h"
+
 int main() {
-	return 0;
+    helper();
+    std::cout << "Everything is OK!";
+    return 0;
 }
+
