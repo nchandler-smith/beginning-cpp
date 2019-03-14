@@ -22,6 +22,12 @@ TEST (MovieTest, DefaultNumberTimesWatchedIs0) {
     EXPECT_EQ (0, unwatchedMovie.getNumberOfTimesWatched());
 }
 
+TEST (MovieTest, IncrementUnwatchedMovieHasBeenWatchedOnce) {
+    Movie movieToWatch = Movie("We're Watching This");
+    movieToWatch.watch();
+    EXPECT_EQ (1, movieToWatch.getNumberOfTimesWatched());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -11,4 +11,5 @@ class Movie {
         std::string getName();
 		std::string getRating();
 		int getNumberOfTimesWatched();
+		void watch();
 };

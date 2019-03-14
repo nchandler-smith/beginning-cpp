@@ -16,3 +16,7 @@ std::string Movie::getRating() {
 int Movie::getNumberOfTimesWatched() {
 	return numberOfTimesWatched;
 }
+
+void Movie::watch() {
+	numberOfTimesWatched++;
+}
