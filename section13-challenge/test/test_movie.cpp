@@ -7,6 +7,11 @@ TEST (MovieTest, TheJawsMovieIsNamedJaws) {
     EXPECT_EQ ("Jaws", jaws.getName());
 }
 
+TEST (MovieTest, ThePGMovieIsRatedPG) {
+    Movie pgMovie = Movie("PG Movie", "PG");
+    EXPECT_EQ ("PG", pgMovie.getRating());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
