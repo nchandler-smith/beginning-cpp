@@ -2,8 +2,9 @@
 #include "../googletest/googlemock/include/gmock/gmock.h"
 #include "../src/movies.h"
 
-TEST (MoviesTest, ChangeMyName) {
-    EXPECT_EQ(1, 1);
+TEST (MoviesTest, MoviesPrettyPrintWhenNoMoviesReturnsSorryNoMoviesToDisplay) {
+    Movies movies = Movies();
+    EXPECT_EQ("Sorry, no movies to display", movies.prettyPrint());
 }
 
 
