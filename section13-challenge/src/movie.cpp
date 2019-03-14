@@ -20,3 +20,7 @@ int Movie::getNumberOfTimesWatched() {
 void Movie::watch() {
 	numberOfTimesWatched++;
 }
+
+void Movie::changeRating(std::string newRating) {
+	rating = newRating;
+}

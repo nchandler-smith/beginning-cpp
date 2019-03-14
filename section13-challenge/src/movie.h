@@ -12,4 +12,5 @@ class Movie {
 		std::string getRating();
 		int getNumberOfTimesWatched();
 		void watch();
+		void changeRating(std::string newRating);
 };

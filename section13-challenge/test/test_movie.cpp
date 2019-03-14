@@ -28,6 +28,12 @@ TEST (MovieTest, IncrementUnwatchedMovieHasBeenWatchedOnce) {
     EXPECT_EQ (1, movieToWatch.getNumberOfTimesWatched());
 }
 
+TEST (MovieTest, RMovieChangedToPGRating) {
+    Movie jaws = Movie("Jaws", "R");
+    jaws.changeRating("PG");
+    EXPECT_EQ("PG", jaws.getRating());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
