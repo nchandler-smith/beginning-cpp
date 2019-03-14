@@ -5,9 +5,8 @@ Movie::Movie(std::string movieName) {
 	name = movieName;
 }
 
-Movie::Movie(std::string movieName, std::string movieRating) {
-	name = movieName;
-	rating = movieRating;
+Movie::Movie(std::string movieName, std::string movieRating) 
+	: name{movieName}, rating{movieRating} {
 }
 
 std::string Movie::getName() {
