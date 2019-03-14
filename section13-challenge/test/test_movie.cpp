@@ -2,9 +2,9 @@
 #include "../googletest/googlemock/include/gmock/gmock.h"
 #include "../src/movie.h"
 
-TEST (HelperTest, Help) {
-    movie();
-    EXPECT_TRUE (true);
+TEST (MovieTest, TheJawsMovieIsNamedJaws) {
+    Movie jaws = Movie("Jaws");
+    EXPECT_EQ ("Jaws", jaws.getName());
 }
 
 int main(int argc, char **argv) {
