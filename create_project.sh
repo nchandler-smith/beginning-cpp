@@ -7,5 +7,5 @@ then
 	echo "\$project_name is empty"
 else
 	mkdir $project_name
-	cp -R ./template/* ./$project_name
+	cp -r ./template/. ./$project_name
 fi
