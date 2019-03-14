@@ -1,9 +1,9 @@
 #include "../googletest/googletest/include/gtest/gtest.h"
 #include "../googletest/googlemock/include/gmock/gmock.h"
-#include "../src/helper.h"
+#include "../src/movie.h"
 
 TEST (HelperTest, Help) {
-    helper();
+    movie();
     EXPECT_TRUE (true);
 }
 
