@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 
 set(TARGET movie_tests)
 
-add_executable(${TARGET} test_movie.cpp)
+add_executable(${TARGET} test_movie.cpp test_movies.cpp)
 
 enable_testing()
 include_directories(../googletest/googletest/include ../googletest/googlemock/include ../src)
@@ -11,5 +11,5 @@ link_directories(../googletest/lib ../src)
 
 
 # Now simply link against gtest or gtest_main as needed. 
-target_link_libraries(${TARGET} gtest_main movie gmock_main)
+target_link_libraries(${TARGET} gtest_main movie gmock_main movies)
 add_test(NAME example_test COMMAND ${TARGET})
