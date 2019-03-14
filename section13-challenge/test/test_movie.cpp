@@ -12,6 +12,11 @@ TEST (MovieTest, ThePGMovieIsRatedPG) {
     EXPECT_EQ ("PG", pgMovie.getRating());
 }
 
+TEST (MovieTest, DefaultMovieRatingIsNotRated) {
+    Movie notRatedMovie = Movie("Not Rated Movie");
+    EXPECT_EQ ("Not Rated", notRatedMovie.getRating());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

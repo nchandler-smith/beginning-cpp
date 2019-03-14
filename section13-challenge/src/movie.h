@@ -6,8 +6,7 @@ class Movie {
 		std::string rating;
 		
 	public:
-		Movie(std::string movieName);
-		Movie(std::string movieName, std::string movieRating);
+		Movie(std::string movieName, std::string movieRating="Not Rated");
         std::string getName();
 		std::string getRating();
 };
