@@ -1,8 +1,8 @@
 #include <string>
 #include "movie.h"
 
-Movie::Movie(std::string movieName, std::string movieRating) 
-	: name{movieName}, rating{movieRating} {
+Movie::Movie(std::string movieName, std::string movieRating, int movieViews) 
+	: name{movieName}, rating{movieRating}, numberOfTimesWatched{movieViews} {
 }
 
 std::string Movie::getName() {
@@ -11,4 +11,8 @@ std::string Movie::getName() {
 
 std::string Movie::getRating() {
 	return rating;
+}
+
+int Movie::getNumberOfTimesWatched() {
+	return numberOfTimesWatched;
 }

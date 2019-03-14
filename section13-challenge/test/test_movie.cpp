@@ -17,6 +17,11 @@ TEST (MovieTest, DefaultMovieRatingIsNotRated) {
     EXPECT_EQ ("Not Rated", notRatedMovie.getRating());
 }
 
+TEST (MovieTest, DefaultNumberTimesWatchedIs0) {
+    Movie unwatchedMovie = Movie("The Unwatchers");
+    EXPECT_EQ (0, unwatchedMovie.getNumberOfTimesWatched());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
