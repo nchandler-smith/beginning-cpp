@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 
 set(TARGET movie_tests)
 
-add_executable(${TARGET} test_movie.cpp test_movies.cpp)
+add_executable(${TARGET} test_main.cpp test_movie.cpp test_movies.cpp)
 
 enable_testing()
 include_directories(../googletest/googletest/include ../googletest/googlemock/include ../src)

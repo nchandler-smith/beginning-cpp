@@ -33,8 +33,3 @@ TEST (MovieTest, RMovieChangedToPGRating) {
     jaws.changeRating("PG");
     EXPECT_EQ("PG", jaws.getRating());
 }
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
