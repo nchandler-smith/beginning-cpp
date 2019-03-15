@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
 add_library(movie movie.cpp)
-add_library(movies movies.cpp)
+add_library(MovieLibrary MovieLibrary.cpp)
 add_executable(template main.cpp)
-target_link_libraries(template movie movies)
+target_link_libraries(template movie MovieLibrary)
