@@ -34,14 +34,19 @@ TEST (MovieTest, RMovieChangedToPGRating) {
     EXPECT_EQ("PG", jaws.getRating());
 }
 
-TEST (MovieTest, JawsPGOneWatchEqualsJawsPGOneWatch) {
+TEST (MovieTest, MoviesAreEqualIfNamesAndRatingsAreEqual) {
     Movie jaws1 {"Jaws", "PG", 1};
     Movie jaws2 {"Jaws", "PG", 1};
     EXPECT_TRUE(jaws1.equals(jaws2));
 }
 
-TEST (MovieTest, JawsPGOneWatchDoesNotEqualJawsROneWatch) {
+TEST (MovieTest, MoviesAreNotEqualIfRatingsAreNotEqual) {
     Movie jaws1 {"Jaws", "PG", 1};
     Movie jaws2 {"Jaws", "R", 1};
     EXPECT_FALSE(jaws1.equals(jaws2)); 
 }
+
+TEST (MovieTest, MoviesAreNotEqualIfNamesAreNotEqual) {
+    Movie jaws1 {"Jaws", "PG", 1};
+    Movie jaws2 {"Return Of Lizard Man", "PG", 1};
+    EXPECT_FALSE(jaws1.equals(jaws2));}
