@@ -39,3 +39,9 @@ TEST (MovieTest, JawsPGOneWatchEqualsJawsPGOneWatch) {
     Movie jaws2 {"Jaws", "PG", 1};
     EXPECT_TRUE(jaws1.equals(jaws2));
 }
+
+TEST (MovieTest, JawsPGOneWatchDoesNotEqualJawsROneWatch) {
+    Movie jaws1 {"Jaws", "PG", 1};
+    Movie jaws2 {"Jaws", "R", 1};
+    EXPECT_FALSE(jaws1.equals(jaws2)); 
+}
