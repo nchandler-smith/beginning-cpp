@@ -9,9 +9,12 @@ TEST (MovieLibraryTest, ByDefaultMovieLibraryIsEmpty) {
     EXPECT_EQ (0, library.getMovies().size());
 }
 
-TEST (MovieLibraryTest, AddingAMovieToLibraryResultsInOneMovie) {
+TEST (MovieLibraryTest, AddingAMovieToLibraryResultsAnotherMovieInLibrary) {
     MovieLibrary library = MovieLibrary();
+    int moviesInLibrary = library.getMovies().size() + 1;
     Movie jaws = Movie("Jaws", "PG", 0);
+
     library.addMovie(jaws);
-    EXPECT_EQ (1, library.getMovies().size());
+    
+    EXPECT_EQ (moviesInLibrary, library.getMovies().size());
 }
