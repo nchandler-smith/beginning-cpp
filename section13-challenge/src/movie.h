@@ -1,3 +1,5 @@
+#ifndef MOVIE_H
+#define MOVIE_H
 #include <string>
 
 class Movie {
@@ -14,3 +16,4 @@ class Movie {
 		void watch();
 		void changeRating(std::string newRating);
 };
+#endif // MOVIE_H
