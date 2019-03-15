@@ -3,3 +3,8 @@
 #include "../src/MovieLibrary.h"
 #include "../src/Movie.h"
 #include <vector>
+
+// TEST (MovieLibraryTest, AddingJawsAddsJawsToLibrary) {
+//     Movie jaws = Movie("Jaws");
+//     EXPECT_EQ (jaws, jaws.getMovies(0));
+// }

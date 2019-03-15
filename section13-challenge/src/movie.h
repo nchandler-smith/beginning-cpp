@@ -15,5 +15,6 @@ class Movie {
 		int getNumberOfTimesWatched();
 		void watch();
 		void changeRating(std::string newRating);
+		bool equals(Movie comparisonObject);
 };
 #endif // MOVIE_H

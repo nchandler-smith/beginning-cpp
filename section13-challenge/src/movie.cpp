@@ -24,3 +24,7 @@ void Movie::watch() {
 void Movie::changeRating(std::string newRating) {
 	rating = newRating;
 }
+
+bool Movie::equals(Movie comparisonObject) {
+	return true;
+}

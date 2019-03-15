@@ -33,3 +33,9 @@ TEST (MovieTest, RMovieChangedToPGRating) {
     jaws.changeRating("PG");
     EXPECT_EQ("PG", jaws.getRating());
 }
+
+TEST (MovieTest, JawsPGOneWatchEqualsJawsPGOneWatch) {
+    Movie jaws1 {"Jaws", "PG", 1};
+    Movie jaws2 {"Jaws", "PG", 1};
+    EXPECT_TRUE(jaws1.equals(jaws2));
+}
