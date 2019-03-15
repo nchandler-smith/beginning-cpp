@@ -1,5 +1,5 @@
 #include <string>
-#include "movie.h"
+#include "Movie.h"
 
 Movie::Movie(std::string movieName, std::string movieRating, int movieViews) 
 	: name{movieName}, rating{movieRating}, numberOfTimesWatched{movieViews} {

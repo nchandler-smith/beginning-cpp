@@ -1,6 +1,6 @@
 #include "../googletest/googletest/include/gtest/gtest.h"
 #include "../googletest/googlemock/include/gmock/gmock.h"
-#include "../src/movie.h"
+#include "../src/Movie.h"
 
 TEST (MovieTest, TheJawsMovieIsNamedJaws) {
     Movie jaws = Movie("Jaws");
