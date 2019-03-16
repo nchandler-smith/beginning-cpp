@@ -6,7 +6,7 @@
 
 TEST (MovieLibraryTest, ByDefaultMovieLibraryIsEmpty) {
     MovieLibrary library = MovieLibrary();
-    
+
     EXPECT_EQ (0, library.getMovies().size());
 }
 
@@ -18,4 +18,15 @@ TEST (MovieLibraryTest, AddingAMovieToLibraryResultsAnotherMovieInLibrary) {
     library.addMovie(jaws);
     
     EXPECT_EQ (moviesInLibrary, library.getMovies().size());
+}
+
+TEST (MovieLibraryTest, CannotAddMovieToLibraryIfMovieAlreadyInLibrary) {
+    MovieLibrary library = MovieLibrary();
+    Movie jaws = Movie("Jaws", "PG", 0);
+    int numberMoviesInLibrary = library.getMovies().size() + 1;
+
+    library.addMovie(jaws);
+    library.addMovie(jaws);
+
+    EXPECT_EQ (numberMoviesInLibrary, library.getMovies().size());
 }

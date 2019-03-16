@@ -25,7 +25,7 @@ void Movie::changeRating(std::string newRating) {
 	rating = newRating;
 }
 
-bool Movie::equals(Movie comparisonObject) {
+bool Movie::equals(Movie comparisonObject) const {
 	if(name != comparisonObject.name || rating != comparisonObject.rating)
 		return false;
 

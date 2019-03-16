@@ -10,5 +10,9 @@ std::vector<Movie> MovieLibrary::getMovies() {
 }
 
 void MovieLibrary::addMovie(Movie movieToAdd) {
+    for(const Movie &movie : library) {
+        if(movie.equals(movieToAdd))
+            return;
+    }
     library.push_back(movieToAdd);
 }
