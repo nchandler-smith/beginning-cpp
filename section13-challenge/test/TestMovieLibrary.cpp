@@ -6,6 +6,7 @@
 
 TEST (MovieLibraryTest, ByDefaultMovieLibraryIsEmpty) {
     MovieLibrary library = MovieLibrary();
+    
     EXPECT_EQ (0, library.getMovies().size());
 }
 

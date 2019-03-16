@@ -2,51 +2,88 @@
 #include "../googletest/googlemock/include/gmock/gmock.h"
 #include "../src/Movie.h"
 
-TEST (MovieTest, TheJawsMovieIsNamedJaws) {
-    Movie jaws = Movie("Jaws");
-    EXPECT_EQ ("Jaws", jaws.getName());
+TEST (MovieTest, MovieHasAName) {
+    std::string movieName {"Jaws"};
+
+    Movie jaws = Movie(movieName);
+
+    EXPECT_EQ (movieName, jaws.getName());
 }
 
-TEST (MovieTest, ThePGMovieIsRatedPG) {
-    Movie pgMovie = Movie("PG Movie", "PG");
-    EXPECT_EQ ("PG", pgMovie.getRating());
+TEST (MovieTest, MovieHasARating) {
+    std::string movieName {"Star Wars"};
+    std::string movieRating {"PG"};
+
+    Movie pgMovie = Movie(movieName, movieRating);
+
+    EXPECT_EQ (movieRating, pgMovie.getRating());
 }
 
 TEST (MovieTest, DefaultMovieRatingIsNotRated) {
-    Movie notRatedMovie = Movie("Not Rated Movie");
-    EXPECT_EQ ("Not Rated", notRatedMovie.getRating());
+    std::string movieName {"Not Rated Movie"};
+    std::string defaultRating {"Not Rated"};
+
+    Movie notRatedMovie = Movie(movieName);
+
+    EXPECT_EQ (defaultRating, notRatedMovie.getRating());
 }
 
 TEST (MovieTest, DefaultNumberTimesWatchedIs0) {
-    Movie unwatchedMovie = Movie("The Unwatchers");
-    EXPECT_EQ (0, unwatchedMovie.getNumberOfTimesWatched());
+    std::string movieName {"Jaws"};
+    int defaultNumberOfWatches = 0;
+
+    Movie unwatchedMovie = Movie(movieName);
+
+    EXPECT_EQ (defaultNumberOfWatches, unwatchedMovie.getNumberOfTimesWatched());
 }
 
-TEST (MovieTest, IncrementUnwatchedMovieHasBeenWatchedOnce) {
+TEST (MovieTest, WatchingMovieIncrementsNumberOfWatches) {
     Movie movieToWatch = Movie("We're Watching This");
+    int expectedNumberTimesWatched = movieToWatch.getNumberOfTimesWatched() + 1;
+
     movieToWatch.watch();
-    EXPECT_EQ (1, movieToWatch.getNumberOfTimesWatched());
+
+    EXPECT_EQ (expectedNumberTimesWatched, movieToWatch.getNumberOfTimesWatched());
 }
 
 TEST (MovieTest, RMovieChangedToPGRating) {
-    Movie jaws = Movie("Jaws", "R");
-    jaws.changeRating("PG");
-    EXPECT_EQ("PG", jaws.getRating());
+    std::string movieName {"Jaws"};
+    std::string startRating {"R"} ;
+    std::string finalRating {"PG"};
+    Movie jaws = Movie(movieName, startRating);
+
+    jaws.changeRating(finalRating);
+
+    EXPECT_EQ(finalRating, jaws.getRating());
 }
 
 TEST (MovieTest, MoviesAreEqualIfNamesAndRatingsAreEqual) {
-    Movie jaws1 {"Jaws", "PG", 1};
-    Movie jaws2 {"Jaws", "PG", 1};
+    std::string movieName {"Jaws"};
+    std::string rating {"PG"};
+
+    Movie jaws1 {movieName, rating, 1};
+    Movie jaws2 {movieName, rating, 1};
+
     EXPECT_TRUE(jaws1.equals(jaws2));
 }
 
 TEST (MovieTest, MoviesAreNotEqualIfRatingsAreNotEqual) {
-    Movie jaws1 {"Jaws", "PG", 1};
-    Movie jaws2 {"Jaws", "R", 1};
+    std::string name {"Jaws"};
+    std::string rating1 {"PG"};
+    std::string rating2 {"R"};
+
+    Movie jaws1 {name, rating1};
+    Movie jaws2 {name, rating2};
+
     EXPECT_FALSE(jaws1.equals(jaws2)); 
 }
 
 TEST (MovieTest, MoviesAreNotEqualIfNamesAreNotEqual) {
-    Movie jaws1 {"Jaws", "PG", 1};
-    Movie jaws2 {"Return Of Lizard Man", "PG", 1};
-    EXPECT_FALSE(jaws1.equals(jaws2));}
+    std::string name1 {"Jaws"};
+    std::string name2 {"Not Jaws"};
+    std::string rating {"PG"};
+
+    Movie jaws1 {name1, rating};
+    Movie jaws2 {name2, rating};
+    EXPECT_FALSE(jaws1.equals(jaws2));
+}
