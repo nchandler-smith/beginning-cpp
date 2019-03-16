@@ -85,5 +85,6 @@ TEST (MovieTest, MoviesAreNotEqualIfNamesAreNotEqual) {
 
     Movie jaws1 {name1, rating};
     Movie jaws2 {name2, rating};
+    
     EXPECT_FALSE(jaws1.equals(jaws2));
 }
