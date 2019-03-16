@@ -15,9 +15,10 @@ TEST (MovieLibraryTest, AddingAMovieToLibraryResultsAnotherMovieInLibrary) {
     int moviesInLibrary = library.getMovies().size() + 1;
     Movie jaws = Movie("Jaws", "PG", 0);
 
-    library.addMovie(jaws);
+    bool addIsSuccessful{library.addMovie(jaws)};
     
     EXPECT_EQ (moviesInLibrary, library.getMovies().size());
+    EXPECT_TRUE(addIsSuccessful);
 }
 
 TEST (MovieLibraryTest, CannotAddMovieToLibraryIfMovieAlreadyInLibrary) {
@@ -26,7 +27,8 @@ TEST (MovieLibraryTest, CannotAddMovieToLibraryIfMovieAlreadyInLibrary) {
     int numberMoviesInLibrary = library.getMovies().size() + 1;
 
     library.addMovie(jaws);
-    library.addMovie(jaws);
+    bool addIsSuccessful{library.addMovie(jaws)};
 
     EXPECT_EQ (numberMoviesInLibrary, library.getMovies().size());
+    EXPECT_FALSE(addIsSuccessful);
 }

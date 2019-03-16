@@ -9,6 +9,6 @@ class MovieLibrary {
 	public:
 		MovieLibrary();
         std::vector<Movie> getMovies();
-        void addMovie(Movie movieToAdd);
+        bool addMovie(Movie movieToAdd);
 
 };
