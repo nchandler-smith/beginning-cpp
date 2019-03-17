@@ -19,6 +19,8 @@ bool MovieLibrary::addMovie(Movie movieToAdd) {
 }
 
 std::string MovieLibrary::buildLibraryInfo() const {
+    if(library.size() == 0)
+        return "Sorry, no movies to display.";
     std::string libraryInfo {};
     for(const Movie &movie : library) {
         libraryInfo += movie.buildMovieInfo() + "\n";

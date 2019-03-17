@@ -56,8 +56,8 @@ TEST (MovieLibraryTest, IncrementMovieAdds1ToWatchedCounter) {
 
     bool incrementValid = library.incrementTimesWatched("Jaws");
 
-    EXPECT_EQ("Jaws, PG, 1\n", library.buildLibraryInfo());
     EXPECT_TRUE(incrementValid);
+    EXPECT_EQ("Jaws, PG, 1\n", library.buildLibraryInfo());
 }
 
 TEST (MovieLibraryTest, IncrementMovieReturnsFalseIfMovieNotInLibrary) {
@@ -70,4 +70,13 @@ TEST (MovieLibraryTest, IncrementMovieReturnsFalseIfMovieNotInLibrary) {
 
     EXPECT_FALSE(incrementValid);
     EXPECT_EQ("Jaws, PG, 0\n", library.buildLibraryInfo());
+}
+
+TEST (MovieLibraryTest, BuildLibraryInfoReturnsSpecialMessageIfNoMoviesInLibrary) {
+    MovieLibrary library = MovieLibrary();
+    std::string expectMessage {"Sorry, no movies to display."};
+
+    std::string returnMessage {library.buildLibraryInfo()};
+
+    EXPECT_EQ(expectMessage, returnMessage);
 }
