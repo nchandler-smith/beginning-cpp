@@ -56,5 +56,5 @@ TEST (MovieLibraryTest, IncrementMovieAdds1ToWatchedCounter) {
 
     library.incrementTimesWatched("Jaws");
 
-    EXPECT_EQ(expectedNumberOfTimesWatched, 1337);
+    EXPECT_EQ("Jaws, PG, 1\n", library.buildLibraryInfo());
 }
