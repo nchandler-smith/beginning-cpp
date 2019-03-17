@@ -26,9 +26,12 @@ std::string MovieLibrary::buildLibraryInfo() const {
     return libraryInfo;
 }
 
-void MovieLibrary::incrementTimesWatched(std::string movieName) {
+bool MovieLibrary::incrementTimesWatched(std::string movieName) {
     for(Movie &movie : library){
-        if(movie.getName() == movieName)
+        if(movie.getName() == movieName) {
             movie.watch();
+            return true;
+        }
     }
+    return false;
 }

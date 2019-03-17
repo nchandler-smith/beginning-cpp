@@ -54,7 +54,20 @@ TEST (MovieLibraryTest, IncrementMovieAdds1ToWatchedCounter) {
     library.addMovie(jaws);
     int expectedNumberOfTimesWatched {1};
 
-    library.incrementTimesWatched("Jaws");
+    bool incrementValid = library.incrementTimesWatched("Jaws");
 
     EXPECT_EQ("Jaws, PG, 1\n", library.buildLibraryInfo());
+    EXPECT_TRUE(incrementValid);
+}
+
+TEST (MovieLibraryTest, IncrementMovieReturnsFalseIfMovieNotInLibrary) {
+    MovieLibrary library = MovieLibrary();
+    Movie jaws = Movie("Jaws", "PG");
+    library.addMovie(jaws);
+    int expectedNumberOfTimesWatched {1};
+
+    bool incrementValid = library.incrementTimesWatched("Terminator");
+
+    EXPECT_FALSE(incrementValid);
+    EXPECT_EQ("Jaws, PG, 0\n", library.buildLibraryInfo());
 }
