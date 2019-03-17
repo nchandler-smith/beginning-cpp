@@ -88,3 +88,14 @@ TEST (MovieTest, MoviesAreNotEqualIfNamesAreNotEqual) {
     
     EXPECT_FALSE(jaws1.equals(jaws2));
 }
+
+TEST (MovieTest, BuildMovieInfoReturnsNameRatingNumberTimesWatched) {
+    std::string name1 {"Jaws"};
+    std::string rating {"PG"};
+    std::string expectedMovieInfo {"Jaws, PG, 0"};
+
+    Movie movie {name1, rating};
+    std::string returnedMovieInfo {movie.buildMovieInfo()};
+
+    EXPECT_EQ(expectedMovieInfo, returnedMovieInfo);
+}
