@@ -10,4 +10,6 @@ class MovieLibrary {
 		MovieLibrary();
         std::vector<Movie> getMovies();
         bool addMovie(Movie movieToAdd);
+		std::string buildLibraryInfo() const;
+		void incrementTimesWatched(std::string movieName);
 };

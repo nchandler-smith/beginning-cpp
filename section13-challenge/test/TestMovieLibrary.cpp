@@ -32,3 +32,29 @@ TEST (MovieLibraryTest, CannotAddMovieToLibraryIfMovieAlreadyInLibrary) {
     EXPECT_EQ (numberMoviesInLibrary, library.getMovies().size());
     EXPECT_FALSE(addIsSuccessful);
 }
+
+TEST (MovieLibraryTest, BuildLibraryInfoReturnsMovieInfoOneEachLine) {
+    MovieLibrary library = MovieLibrary();
+    Movie jaws = Movie("Jaws", "PG", 0);
+    Movie terminator = Movie("Terminator", "R", 1);
+    std::string expectedLibraryInfo {};
+    expectedLibraryInfo += "Jaws, PG, 0\n";
+    expectedLibraryInfo += "Terminator, R, 1\n";
+
+    library.addMovie(jaws);
+    library.addMovie(terminator);
+    std::string returnedLibraryInfo {library.buildLibraryInfo()};
+
+    EXPECT_EQ(expectedLibraryInfo, returnedLibraryInfo);
+}
+
+TEST (MovieLibraryTest, IncrementMovieAdds1ToWatchedCounter) {
+    MovieLibrary library = MovieLibrary();
+    Movie jaws = Movie("Jaws", "PG");
+    library.addMovie(jaws);
+    int expectedNumberOfTimesWatched {1};
+
+    library.incrementTimesWatched("Jaws");
+
+    EXPECT_EQ(expectedNumberOfTimesWatched, 1337);
+}

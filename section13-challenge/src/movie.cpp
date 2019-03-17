@@ -32,7 +32,7 @@ bool Movie::equals(Movie comparisonObject) const {
 	return true;
 }
 
-std::string Movie::buildMovieInfo() {
+std::string Movie::buildMovieInfo() const {
 	std::string movieInfo {};
 	movieInfo += name + ", ";
 	movieInfo += rating + ", ";

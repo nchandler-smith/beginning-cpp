@@ -17,3 +17,15 @@ bool MovieLibrary::addMovie(Movie movieToAdd) {
     library.push_back(movieToAdd);
     return true;
 }
+
+std::string MovieLibrary::buildLibraryInfo() const {
+    std::string libraryInfo {};
+    for(const Movie &movie : library) {
+        libraryInfo += movie.buildMovieInfo() + "\n";
+    }
+    return libraryInfo;
+}
+
+void MovieLibrary::incrementTimesWatched(std::string movieName) {
+    ;
+}
