@@ -9,7 +9,9 @@ class MovieLibrary {
 	public:
 		MovieLibrary();
         std::vector<Movie> getMovies();
-        bool addMovie(Movie movieToAdd);
+        bool addMovie(std::string movieName, 
+					  std::string movieRating, 
+					  int numberTimesWatched=0);
 		std::string buildLibraryInfo() const;
 		bool incrementTimesWatched(std::string movieName);
 };

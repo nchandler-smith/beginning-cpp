@@ -1,4 +1,5 @@
 #include <string>
+#include "Movie.h"
 #include "MovieLibrary.h"
 
 MovieLibrary::MovieLibrary() {
@@ -9,7 +10,10 @@ std::vector<Movie> MovieLibrary::getMovies() {
     return library;
 }
 
-bool MovieLibrary::addMovie(Movie movieToAdd) {
+bool MovieLibrary::addMovie(std::string movieName, 
+					  std::string movieRating, 
+					  int numberTimesWatched) {
+    Movie movieToAdd {movieName, movieRating, numberTimesWatched};
     for(const Movie &movie : library) {
         if(movie.equals(movieToAdd))
             return false;

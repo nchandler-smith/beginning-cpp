@@ -13,9 +13,9 @@ TEST (MovieLibraryTest, ByDefaultMovieLibraryIsEmpty) {
 TEST (MovieLibraryTest, AddingAMovieToLibraryResultsAnotherMovieInLibrary) {
     MovieLibrary library = MovieLibrary();
     int moviesInLibrary = library.getMovies().size() + 1;
-    Movie jaws = Movie("Jaws", "PG", 0);
+    bool addIsSuccessful {};
 
-    bool addIsSuccessful{library.addMovie(jaws)};
+    addIsSuccessful = library.addMovie("Jaws", "PG", 0);
     
     EXPECT_EQ (moviesInLibrary, library.getMovies().size());
     EXPECT_TRUE(addIsSuccessful);
@@ -23,11 +23,10 @@ TEST (MovieLibraryTest, AddingAMovieToLibraryResultsAnotherMovieInLibrary) {
 
 TEST (MovieLibraryTest, CannotAddMovieToLibraryIfMovieAlreadyInLibrary) {
     MovieLibrary library = MovieLibrary();
-    Movie jaws = Movie("Jaws", "PG", 0);
     int numberMoviesInLibrary = library.getMovies().size() + 1;
 
-    library.addMovie(jaws);
-    bool addIsSuccessful{library.addMovie(jaws)};
+    library.addMovie("Jaws", "PG", 0);
+    bool addIsSuccessful{library.addMovie("Jaws", "PG", 0)};
 
     EXPECT_EQ (numberMoviesInLibrary, library.getMovies().size());
     EXPECT_FALSE(addIsSuccessful);
@@ -35,14 +34,12 @@ TEST (MovieLibraryTest, CannotAddMovieToLibraryIfMovieAlreadyInLibrary) {
 
 TEST (MovieLibraryTest, BuildLibraryInfoReturnsMovieInfoOneEachLine) {
     MovieLibrary library = MovieLibrary();
-    Movie jaws = Movie("Jaws", "PG", 0);
-    Movie terminator = Movie("Terminator", "R", 1);
     std::string expectedLibraryInfo {};
     expectedLibraryInfo += "Jaws, PG, 0\n";
     expectedLibraryInfo += "Terminator, R, 1\n";
 
-    library.addMovie(jaws);
-    library.addMovie(terminator);
+    library.addMovie("Jaws", "PG", 0);
+    library.addMovie("Terminator", "R", 1);
     std::string returnedLibraryInfo {library.buildLibraryInfo()};
 
     EXPECT_EQ(expectedLibraryInfo, returnedLibraryInfo);
@@ -50,8 +47,7 @@ TEST (MovieLibraryTest, BuildLibraryInfoReturnsMovieInfoOneEachLine) {
 
 TEST (MovieLibraryTest, IncrementMovieAdds1ToWatchedCounter) {
     MovieLibrary library = MovieLibrary();
-    Movie jaws = Movie("Jaws", "PG");
-    library.addMovie(jaws);
+    library.addMovie("Jaws", "PG", 0);
     int expectedNumberOfTimesWatched {1};
 
     bool incrementValid = library.incrementTimesWatched("Jaws");
@@ -62,8 +58,7 @@ TEST (MovieLibraryTest, IncrementMovieAdds1ToWatchedCounter) {
 
 TEST (MovieLibraryTest, IncrementMovieReturnsFalseIfMovieNotInLibrary) {
     MovieLibrary library = MovieLibrary();
-    Movie jaws = Movie("Jaws", "PG");
-    library.addMovie(jaws);
+    library.addMovie("Jaws", "PG");
     int expectedNumberOfTimesWatched {1};
 
     bool incrementValid = library.incrementTimesWatched("Terminator");

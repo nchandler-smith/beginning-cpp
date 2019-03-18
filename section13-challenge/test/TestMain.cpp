@@ -1,5 +1,5 @@
 #include "../googletest/googletest/include/gtest/gtest.h"
-#include "../googletest/googlemock/include/gmock/gmock.h" 
+#include "../googletest/googlemock/include/gmock/gmock.h"
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
