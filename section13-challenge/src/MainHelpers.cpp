@@ -14,5 +14,9 @@ std::string libraryAddMovie(MovieLibrary &library, std::string movieName, std::s
 }
 
 std::string incrementMovie(MovieLibrary &library, std::string movieName) {
-    return "";
+    bool success {};
+    success = library.incrementTimesWatched(movieName);
+    if(success)
+        return movieName + " watch incremented.";
+    return movieName + " not found.";
 }
