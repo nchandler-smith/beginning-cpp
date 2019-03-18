@@ -1,3 +1,6 @@
+#ifndef MOVIE_LIBRARY_H
+#define MOVIE_LIBRARY_H
+
 #include <string>
 #include <vector>
 #include "Movie.h"
@@ -9,9 +12,9 @@ class MovieLibrary {
 	public:
 		MovieLibrary();
         std::vector<Movie> getMovies();
-        bool addMovie(std::string movieName, 
-					  std::string movieRating, 
-					  int numberTimesWatched=0);
+        bool addMovie(std::string movieName, std::string movieRating, int numberTimesWatched=0);
 		std::string buildLibraryInfo() const;
 		bool incrementTimesWatched(std::string movieName);
 };
+
+#endif
