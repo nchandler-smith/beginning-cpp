@@ -15,7 +15,7 @@ class Movie {
 		int getNumberOfTimesWatched();
 		void watch();
 		void changeRating(std::string newRating);
-		bool equals(Movie comparisonObject) const;
+		bool equals(const Movie &comparisonObject) const;
 		std::string buildMovieInfo() const;
 };
 #endif // MOVIE_H

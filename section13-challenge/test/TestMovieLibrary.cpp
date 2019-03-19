@@ -7,7 +7,7 @@
 TEST (MovieLibraryTest, ByDefaultMovieLibraryIsEmpty) {
     MovieLibrary library = MovieLibrary();
 
-    EXPECT_EQ (0, library.getMovies().size());
+    EXPECT_EQ (0, library.getMovies().size()); // still using getMovies. Could be replaced with buildInfo parsed by test helper function.
 }
 
 TEST (MovieLibraryTest, AddingAMovieToLibraryResultsAnotherMovieInLibrary) {
