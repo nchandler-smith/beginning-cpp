@@ -47,6 +47,20 @@ TEST (Mystring, OverloadLessThanIsFalseWhenLeftStringIsGreaterThanRightStringLex
     EXPECT_FALSE (b < a);
 }
 
+TEST (Mystring, OverloadGreaterThanIsTrueWhenLeftStringIsGreaterThanRightStringLexicographically) {
+    Mystring a {"A"};
+    Mystring b {"B"};
+
+    EXPECT_TRUE (b > a);
+}
+
+TEST (Mystring, OverloadGreaterThanIsFalseWhenLeftStringIsLessThanRightStringLexicographically) {
+    Mystring a {"A"};
+    Mystring b {"B"};
+
+    EXPECT_FALSE (a > b);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

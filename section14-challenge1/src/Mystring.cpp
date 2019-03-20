@@ -80,12 +80,18 @@ bool Mystring::operator!=(const Mystring &rhs) const{
     return !(*this == rhs);
 }
 
+// Less than overload
 bool Mystring::operator<(const Mystring &rhs) const{
     std::string left {*this->get_str()};
     std::string right {*rhs.get_str()};
     return left < right;
 }
 
+// Greater than overload
+bool Mystring::operator>(const Mystring &rhs) const{
+    return !(*this == rhs) && !(*this < rhs);
+}
+ 
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;

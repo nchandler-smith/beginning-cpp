@@ -21,6 +21,7 @@ public:
     bool operator==(const Mystring &rhs) const;     // equals
     bool operator!=(const Mystring &rhs) const;     // not equals
     bool operator<(const Mystring &rhs) const;      // less than
+    bool operator>(const Mystring &rhs) const;      // greater than
     
     void display() const;
     
