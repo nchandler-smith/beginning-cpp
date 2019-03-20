@@ -65,6 +65,15 @@ Mystring &Mystring::operator=( Mystring &&rhs) {
     return *this;
 }
 
+// Equals overload
+bool Mystring::operator==(const Mystring &rhs) const{
+    int compareResult {};
+    bool isEqual {};
+    compareResult = std::strcmp(this->str, rhs.str);
+    isEqual = compareResult == 0;
+    return isEqual;
+}
+
 
 // Display method
 void Mystring::display() const {
