@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <string>
 #include "Mystring.h"
 
  // No-args constructor
@@ -74,6 +75,16 @@ bool Mystring::operator==(const Mystring &rhs) const{
     return isEqual;
 }
 
+// Not equals overload
+bool Mystring::operator!=(const Mystring &rhs) const{
+    return !(*this == rhs);
+}
+
+bool Mystring::operator<(const Mystring &rhs) const{
+    std::string left {*this->get_str()};
+    std::string right {*rhs.get_str()};
+    return left < right;
+}
 
 // Display method
 void Mystring::display() const {

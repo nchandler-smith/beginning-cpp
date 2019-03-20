@@ -18,6 +18,35 @@ TEST (Mystring, OverloadEqualsFalseWhenStringDataIsDifferent) {
 
     EXPECT_FALSE (a == b);
 }
+
+TEST (Mystring, OverloadNotEqualsTrueWhenStringDataIsDifferent) {
+    Mystring a {"a string."};
+    Mystring b {"b string."};
+
+    EXPECT_TRUE (a != b);
+}
+
+TEST (Mystring, OverloadNotEqualsFalseWhenStringDataIsSame) {
+    Mystring a {"Same"};
+    Mystring b {"Same"};
+
+    EXPECT_FALSE (a != b);
+}
+
+TEST (Mystring, OverloadLessThanIsTrueWhenLeftStringIsLessThanRightStringLexicographically) {
+    Mystring a {"A"};
+    Mystring b {"B"};
+
+    EXPECT_TRUE (a < b);
+}
+
+TEST (Mystring, OverloadLessThanIsFalseWhenLeftStringIsGreaterThanRightStringLexicographically) {
+    Mystring a {"A"};
+    Mystring b {"B"};
+
+    EXPECT_FALSE (b < a);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

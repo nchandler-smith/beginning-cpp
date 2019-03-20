@@ -19,6 +19,8 @@ public:
     Mystring &operator=(Mystring &&rhs);            // Move assignment
 
     bool operator==(const Mystring &rhs) const;     // equals
+    bool operator!=(const Mystring &rhs) const;     // not equals
+    bool operator<(const Mystring &rhs) const;      // less than
     
     void display() const;
     
