@@ -61,6 +61,15 @@ TEST (Mystring, OverloadGreaterThanIsFalseWhenLeftStringIsLessThanRightStringLex
     EXPECT_FALSE (a > b);
 }
 
+TEST (Mystring, OverloadUnaryMinusReturnsCopyAsLowers) {
+    Mystring a {"TO LOWER TEST"};
+    Mystring expectValue {"to lower test"};
+    
+    Mystring returnValue {-a};
+
+    EXPECT_EQ (expectValue, returnValue);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

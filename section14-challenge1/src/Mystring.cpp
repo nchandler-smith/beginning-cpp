@@ -91,6 +91,12 @@ bool Mystring::operator<(const Mystring &rhs) const{
 bool Mystring::operator>(const Mystring &rhs) const{
     return !(*this == rhs) && !(*this < rhs);
 }
+
+// Unary minus overload
+Mystring Mystring::operator-() {
+    Mystring returnString {};
+    return returnString;
+}
  
 // Display method
 void Mystring::display() const {
