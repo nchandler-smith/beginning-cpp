@@ -9,6 +9,7 @@ int main() {
     
 
     cout << boolalpha << endl;
+    cout << "\n---------------" << endl;
     Mystring a {"frank"};
     Mystring b {"frank"};
     cout << "a: " << a << endl;
@@ -17,13 +18,16 @@ int main() {
     cout << "a==b " << (a==b) << endl;         // true
     cout << "a!=b " << (a!=b) << endl;          // false
     
+    cout << "\n---------------" << endl;
     b = "george";
+    cout << "a: " << a << endl;
     cout << "b: " << b << endl;
     cout << "a==b " << (a==b) << endl;         // true
     cout << "a!=b " << (a!=b) << endl;          // false
-    //  cout << (a<b) << endl;          // true
-    // cout << (a>b) << endl;           // false
+     cout << "a<b" << (a<b) << endl;          // true
+    cout << "a>b" << (a>b) << endl;           // false
     
+    cout << "\n---------------" << endl;
     // Mystring s1 {"FRANK"};
     // s1 = -s1;       
     // cout << s1 << endl;               // frank              
