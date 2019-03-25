@@ -93,9 +93,19 @@ bool Mystring::operator>(const Mystring &rhs) const{
 }
 
 // Unary minus overload
-Mystring Mystring::operator-() {
-    Mystring returnString {};
-    return returnString;
+Mystring Mystring::operator-() const {
+    int stringLength {};
+    stringLength = std::strlen(this->str) + 1;
+    char *newString = new char(stringLength);
+    std:strcpy(newString, this->str);
+
+    for(size_t i {}; i<stringLength; i++) {
+        newString[i] = std::tolower(newString[i]);
+    }
+    Mystring myReturn {newString};
+
+    delete [] newString;
+    return myReturn;
 }
  
 // Display method
