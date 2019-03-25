@@ -62,12 +62,13 @@ TEST (Mystring, OverloadGreaterThanIsFalseWhenLeftStringIsLessThanRightStringLex
 }
 
 TEST (Mystring, OverloadUnaryMinusReturnsCopyAsLowers) {
-    Mystring a {"TO LOWER TEST"};
-    Mystring expectValue {"to lower test"};
+    Mystring caps {"TO LOWER TEST"};
+    std::string expectValue {"to lower test"};
     
-    Mystring returnValue {-a};
+    Mystring lowers {-caps};
+    std::string actual = lowers.get_str();
 
-    EXPECT_EQ (expectValue, returnValue);
+    EXPECT_EQ (expectValue, actual);
 }
 
 int main(int argc, char **argv) {
