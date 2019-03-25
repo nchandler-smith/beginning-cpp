@@ -23,6 +23,7 @@ public:
     bool operator<(const Mystring &rhs) const;      // less than
     bool operator>(const Mystring &rhs) const;      // greater than
     Mystring operator-() const;
+    Mystring operator+(const Mystring &rhs) const;
     
     void display() const;
     

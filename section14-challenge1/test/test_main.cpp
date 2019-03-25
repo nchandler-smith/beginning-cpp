@@ -71,6 +71,16 @@ TEST (Mystring, OverloadUnaryMinusReturnsCopyAsLowers) {
     EXPECT_EQ (expectValue, actual);
 }
 
+TEST (Mystring, OverloadBinaryPlusConcatenates) {
+    Mystring a {"First part. "};
+    Mystring b {"Second part."};
+    std::string expectValue {"First part. Second part."};
+    Mystring actual {};
+    actual = a + b;
+
+    EXPECT_EQ (expectValue, actual.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

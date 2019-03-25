@@ -100,6 +100,20 @@ Mystring Mystring::operator-() const {
     }
     return myReturn;
 }
+
+// Binary plus overload
+Mystring Mystring::operator+(const Mystring &rhs) const {
+    int thisLength {this->get_length()};
+    int rhsLength {rhs.get_length()};
+    int concatStringLength {thisLength + rhsLength + 1};
+    
+    char *concatString = new char[concatStringLength];
+    std::strcpy(concatString, this->str);
+    std::strcat(concatString, rhs.get_str());
+    
+    Mystring myReturn {concatString};
+    return myReturn;
+}
  
 // Display method
 void Mystring::display() const {
