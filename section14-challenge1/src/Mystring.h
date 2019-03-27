@@ -22,8 +22,9 @@ public:
     bool operator!=(const Mystring &rhs) const;     // not equals
     bool operator<(const Mystring &rhs) const;      // less than
     bool operator>(const Mystring &rhs) const;      // greater than
-    Mystring operator-() const;
-    Mystring operator+(const Mystring &rhs) const;
+    Mystring operator-() const;                     // to lower
+    Mystring operator+(const Mystring &rhs) const;  // concat
+    Mystring &operator+=(const Mystring &rhs);     // plus equals
     
     void display() const;
     

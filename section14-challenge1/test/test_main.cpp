@@ -81,6 +81,16 @@ TEST (Mystring, OverloadBinaryPlusConcatenates) {
     EXPECT_EQ (expectValue, actual.get_str());
 }
 
+TEST (Mystring, OverloadPlusEqualsConcatenation) {
+    Mystring actual {"First part. "};
+    Mystring b {"Second part."};
+    std::string expectValue {"First part. Second part."};
+    actual += b;
+
+    EXPECT_EQ (expectValue, actual.get_str());
+
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -112,7 +112,21 @@ Mystring Mystring::operator+(const Mystring &rhs) const {
     std::strcat(concatString, rhs.get_str());
     
     Mystring myReturn {concatString};
+    delete [] concatString;
     return myReturn;
+}
+
+// Plus equals overload
+Mystring &Mystring::operator+=(const Mystring &rhs){
+    int concatStringLength {this->get_length() + rhs.get_length() + 1};
+    char *concatString = new char[concatStringLength];
+
+    std::strcpy(concatString, this->str);
+    std::strcat(concatString, rhs.get_str());
+    std::strcpy(this->str, concatString);
+
+    delete [] concatString;
+    return *this;
 }
  
 // Display method
