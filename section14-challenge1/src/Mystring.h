@@ -25,7 +25,8 @@ public:
     Mystring operator-() const;                     // to lower
     Mystring operator+(const Mystring &rhs) const;  // concat
     Mystring &operator+=(const Mystring &rhs);      // plus equals
-    Mystring operator*(const int multiplier) const;  // star
+    Mystring operator*(const int multiplier) const; // star
+    Mystring &operator*=(const int multiplier);
 
     void display() const;
     

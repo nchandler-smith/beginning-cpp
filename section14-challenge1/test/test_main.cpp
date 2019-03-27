@@ -93,11 +93,19 @@ TEST (Mystring, OverloadPlusEqualsConcatenation) {
 
 TEST (Mystring, OverloadStarCopiesString) {
     Mystring base {"12345"};
-    std::string expectValue{"123451234512345"};
-    Mystring actual {"-----"};
+    std::string expectValue {"123451234512345"};
+    Mystring actual {};
     actual = base * 3;
 
     EXPECT_EQ (expectValue, actual.get_str());
+}
+
+TEST (Mystring ,OverloadStarEqualsCopiesString) {
+    Mystring base {"abcdef"};
+    std::string expectValue {"abcdefabcdefabcdefabcdefabcdef"};
+    base *= 5;
+
+    EXPECT_EQ (expectValue, base.get_str());
 }
 
 int main(int argc, char **argv) {

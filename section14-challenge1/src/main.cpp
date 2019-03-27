@@ -43,9 +43,9 @@ int main() {
     cout << "s2: " << s2;
     cout << " becomes " << s1 << endl;              // 123451234512345
     
-    // Mystring s3{"abcdef"};  
-    // s3 *= 5;
-    // cout << s3 << endl;             // abcdefabcdefabcdefabcdefabcdef
+    Mystring s3{"abcdef"};  
+    s3 *= 5;
+    cout << s3 << endl;             // abcdefabcdefabcdefabcdefabcdef
     
     // Mystring s = "Frank";
     // ++s;
