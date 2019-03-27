@@ -24,8 +24,9 @@ public:
     bool operator>(const Mystring &rhs) const;      // greater than
     Mystring operator-() const;                     // to lower
     Mystring operator+(const Mystring &rhs) const;  // concat
-    Mystring &operator+=(const Mystring &rhs);     // plus equals
-    
+    Mystring &operator+=(const Mystring &rhs);      // plus equals
+    Mystring operator*(const int multiplier) const;  // star
+
     void display() const;
     
     int get_length() const;                       // getters

@@ -91,6 +91,15 @@ TEST (Mystring, OverloadPlusEqualsConcatenation) {
 
 }
 
+TEST (Mystring, OverloadStarCopiesString) {
+    Mystring base {"12345"};
+    std::string expectValue{"123451234512345"};
+    Mystring actual {"-----"};
+    actual = base * 3;
+
+    EXPECT_EQ (expectValue, actual.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

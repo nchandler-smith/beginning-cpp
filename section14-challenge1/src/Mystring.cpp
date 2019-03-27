@@ -117,7 +117,7 @@ Mystring Mystring::operator+(const Mystring &rhs) const {
 }
 
 // Plus equals overload
-Mystring &Mystring::operator+=(const Mystring &rhs){
+Mystring &Mystring::operator+=(const Mystring &rhs) {
     int concatStringLength {this->get_length() + rhs.get_length() + 1};
     char *concatString = new char[concatStringLength];
 
@@ -127,6 +127,15 @@ Mystring &Mystring::operator+=(const Mystring &rhs){
 
     delete [] concatString;
     return *this;
+}
+
+// Star overload
+Mystring Mystring::operator*(const int multiplier) const {
+    Mystring returnValue {};
+    for(size_t i {}; i < multiplier; i++) {
+        returnValue += *this;
+    }
+    return returnValue;
 }
  
 // Display method
