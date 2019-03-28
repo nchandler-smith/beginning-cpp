@@ -136,6 +136,14 @@ Mystring &Mystring::operator*=(const int multiplier) {
     *this = *this * multiplier;
     return *this;
 }
+
+// pre-increment
+Mystring Mystring::operator++() {
+    for(size_t i {}; i < this->get_length(); i++){
+        this->str[i] = std::toupper(this->str[i]);
+    }
+    return *this;
+}
  
 // Display method
 void Mystring::display() const {

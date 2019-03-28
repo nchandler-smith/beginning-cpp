@@ -26,7 +26,8 @@ public:
     Mystring operator+(const Mystring &rhs) const;  // concat
     Mystring &operator+=(const Mystring &rhs);      // plus equals
     Mystring operator*(const int multiplier) const; // star
-    Mystring &operator*=(const int multiplier);
+    Mystring &operator*=(const int multiplier);     // star equals
+    Mystring operator++();                          // pre-increment
 
     void display() const;
     

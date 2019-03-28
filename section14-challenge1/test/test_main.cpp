@@ -108,6 +108,15 @@ TEST (Mystring ,OverloadStarEqualsCopiesString) {
     EXPECT_EQ (expectValue, base.get_str());
 }
 
+TEST (Mystring, OverloadPreIncrementReturnsToUpper) {
+    Mystring frank {"frank"};
+    std::string expectValue {"FRANK"};
+    
+    ++frank;
+
+    EXPECT_EQ (expectValue, frank.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

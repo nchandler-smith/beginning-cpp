@@ -48,17 +48,17 @@ int main() {
     s3 *= 5;
     cout << " becomes " << s3 << endl;             // abcdefabcdefabcdefabcdefabcdef
     
-    // Mystring s = "Frank";
-    // ++s;
-    // cout << s << endl;                  // FRANK
+    Mystring s = "Frank";
+    ++s;
+    cout << s << endl;                  // FRANK
     
-    // s = -s; 
-    // cout << s << endl;                  // frank
+    s = -s; 
+    cout << s << endl;                  // frank
     
-    // Mystring result;
-    // result = ++s;                           
-    // cout << s << endl;                  // FRANK
-    // cout << result << endl;           // FRANK
+    Mystring result;
+    result = ++s;                           
+    cout << s << endl;                  // FRANK
+    cout << result << endl;           // FRANK
     
     // s = "Frank";
     // s++;
