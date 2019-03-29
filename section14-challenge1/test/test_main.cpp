@@ -117,6 +117,16 @@ TEST (Mystring, OverloadPreIncrementReturnsToUpper) {
     EXPECT_EQ (expectValue, frank.get_str());
 }
 
+TEST (Mystring, OverloadPostIncrementReturnsToUpper) {
+    Mystring frank {"frank"};
+    Mystring original = frank++;
+    std::string expectValue1 {"frank"};
+    std::string expectValue2 {"FRANK"};
+
+    EXPECT_EQ (expectValue1, original.get_str());
+    EXPECT_EQ (expectValue2, frank.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

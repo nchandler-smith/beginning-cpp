@@ -28,6 +28,7 @@ public:
     Mystring operator*(const int multiplier) const; // star
     Mystring &operator*=(const int multiplier);     // star equals
     Mystring operator++();                          // pre-increment
+    Mystring operator++(int);                          // post-increment
 
     void display() const;
     

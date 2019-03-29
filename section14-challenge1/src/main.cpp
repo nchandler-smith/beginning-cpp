@@ -60,15 +60,15 @@ int main() {
     cout << s << endl;                  // FRANK
     cout << result << endl;           // FRANK
     
-    // s = "Frank";
-    // s++;
-    // cout << s << endl;                  // FRANK
+    s = "Frank";
+    cout << "Post Increment before: " << s++ << endl;
+    cout << "Post Increment after: " << s << endl;                  // FRANK
     
-    // s = -s;
-    // cout << s << endl;                  // frank
-    // result = s++;
-    // cout << s << endl;                  // FRANK
-    // cout << result << endl;           // frank
+    s = -s;
+    cout << s << endl;                  // frank
+    result = s++;
+    cout << s << endl;                  // FRANK
+    cout << result << endl;           // frank
     return 0;
 }
 

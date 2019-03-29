@@ -144,6 +144,13 @@ Mystring Mystring::operator++() {
     }
     return *this;
 }
+
+//post-increment
+Mystring Mystring::operator++(int) {
+    Mystring returnValue = *this;
+    ++*this;
+    return returnValue;
+}
  
 // Display method
 void Mystring::display() const {
