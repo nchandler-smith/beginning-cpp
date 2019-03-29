@@ -66,7 +66,6 @@ Mystring &Mystring::operator=( Mystring &&rhs) {
     return *this;
 }
 
-// Equals overload
 bool Mystring::operator==(const Mystring &rhs) const{
     int compareResult {};
     bool isEqual {};
@@ -75,24 +74,20 @@ bool Mystring::operator==(const Mystring &rhs) const{
     return isEqual;
 }
 
-// Not equals overload
 bool Mystring::operator!=(const Mystring &rhs) const{
     return !(*this == rhs);
 }
 
-// Less than overload
 bool Mystring::operator<(const Mystring &rhs) const{
     std::string left {*this->get_str()};
     std::string right {*rhs.get_str()};
     return left < right;
 }
 
-// Greater than overload
 bool Mystring::operator>(const Mystring &rhs) const{
     return !(*this == rhs) && !(*this < rhs);
 }
 
-// Unary minus overload
 Mystring Mystring::operator-() const {
     Mystring myReturn {*this};
     for(size_t i {}; i < myReturn.get_length(); i++) {
@@ -101,7 +96,6 @@ Mystring Mystring::operator-() const {
     return myReturn;
 }
 
-// Binary plus overload
 Mystring Mystring::operator+(const Mystring &rhs) const {
     int thisLength {this->get_length()};
     int rhsLength {rhs.get_length()};
@@ -116,13 +110,11 @@ Mystring Mystring::operator+(const Mystring &rhs) const {
     return myReturn;
 }
 
-// Plus equals overload
 Mystring &Mystring::operator+=(const Mystring &rhs) {
     *this = *this + rhs;
     return *this;
 }
 
-// Star overload
 Mystring Mystring::operator*(const int multiplier) const {
     Mystring returnValue {};
     for(size_t i {}; i < multiplier; i++) {
@@ -131,13 +123,11 @@ Mystring Mystring::operator*(const int multiplier) const {
     return returnValue;
 }
 
-// Star equals overload
 Mystring &Mystring::operator*=(const int multiplier) {
     *this = *this * multiplier;
     return *this;
 }
 
-// pre-increment
 Mystring Mystring::operator++() {
     for(size_t i {}; i < this->get_length(); i++){
         this->str[i] = std::toupper(this->str[i]);
@@ -145,7 +135,6 @@ Mystring Mystring::operator++() {
     return *this;
 }
 
-//post-increment
 Mystring Mystring::operator++(int) {
     Mystring returnValue = *this;
     ++*this;
