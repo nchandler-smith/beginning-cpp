@@ -71,4 +71,3 @@ int main() {
     cout << result << endl;           // frank
     return 0;
 }
-
