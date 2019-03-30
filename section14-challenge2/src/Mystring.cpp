@@ -65,6 +65,11 @@ Mystring &Mystring::operator=( Mystring &&rhs) {
     return *this;
 }
 
+bool operator==(const Mystring &lhs, const Mystring &rhs) {
+    bool stringsAreEqual {};
+    stringsAreEqual = std::strcmp(lhs.get_str(), rhs.get_str()) == 0;
+    return stringsAreEqual;
+}
 
 // Display method
 void Mystring::display() const {

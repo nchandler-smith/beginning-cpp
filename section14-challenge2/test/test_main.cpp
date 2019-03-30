@@ -2,8 +2,10 @@
 #include "../googletest/googlemock/include/gmock/gmock.h"
 #include "../src/Mystring.h"
 
-TEST (HelperTest, Help) {
-    EXPECT_TRUE (true);
+TEST (MystringTest, OverloadEquals) {
+    Mystring frank1 = {"frank"};
+    Mystring frank2 = {"frank"};
+    EXPECT_TRUE (frank1 == frank2);
 }
 
 int main(int argc, char **argv) {
