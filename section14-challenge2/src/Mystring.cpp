@@ -75,6 +75,10 @@ bool operator!=(const Mystring &lhs, const Mystring &rhs) {
     return !(lhs == rhs);
 }
 
+bool operator<(const Mystring &lhs, const Mystring &rhs) {
+    return lhs.get_str() < rhs.get_str();
+}
+
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;

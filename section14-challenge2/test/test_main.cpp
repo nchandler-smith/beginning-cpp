@@ -26,6 +26,18 @@ TEST (MystringTest, OverloadNotEqualsWhenEqualsReturnsFalse) {
     EXPECT_FALSE (frank1 != frank2);
 }
 
+TEST (MystringTest, OverloadLessThanWhenTrue) {
+    Mystring frank {"frank"};
+    Mystring george {"george"};
+    EXPECT_TRUE (frank < george);
+}
+
+TEST (MystringTest, OverloadLessThanWhenFalse) {
+    Mystring frank {"frank"};
+    Mystring george {"george"};
+    EXPECT_FALSE (george < frank);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
