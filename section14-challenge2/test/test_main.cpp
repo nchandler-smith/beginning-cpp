@@ -38,6 +38,24 @@ TEST (MystringTest, OverloadLessThanWhenFalse) {
     EXPECT_FALSE (george < frank);
 }
 
+TEST (MystringTest, OverloadGreaterThanWhenTrue) {
+    Mystring frank {"frank"};
+    Mystring george {"george"};
+    EXPECT_TRUE (george > frank);
+}
+
+TEST (MystringTest, OverloadGreaterThanWhenEqualsReturnsFalse) {
+    Mystring frank1 {"frank"};
+    Mystring frank2 {"frank"};
+    EXPECT_FALSE (frank1 > frank2);
+}
+
+TEST (MystringTest, OverloadGreaterThanWhenLessThanReturnsFalse) {
+    Mystring frank {"frank"};
+    Mystring george {"george"};
+    EXPECT_FALSE (frank > george);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

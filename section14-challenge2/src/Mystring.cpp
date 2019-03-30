@@ -79,6 +79,12 @@ bool operator<(const Mystring &lhs, const Mystring &rhs) {
     return lhs.get_str() < rhs.get_str();
 }
 
+bool operator>(const Mystring &lhs, const Mystring &rhs) {
+    bool notEqualTo {lhs != rhs};
+    bool notLessThan {!(lhs < rhs)};
+    return notEqualTo && notLessThan;
+}
+
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
