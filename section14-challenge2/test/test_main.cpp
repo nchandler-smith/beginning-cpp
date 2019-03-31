@@ -123,6 +123,24 @@ TEST (MystringTest, OverloadingPreIncrementReturnsUppers) {
     EXPECT_EQ(expectValue, a.get_str());
 }
 
+TEST (MystringTest, OverloadingPostIncrementReturnsLowers) {
+    Mystring a = {"all uppers"};
+    std::string expectValue {"all uppers"};
+
+    Mystring test = {a++};
+
+    EXPECT_EQ (expectValue, test.get_str());
+}
+
+TEST (MystringTest, OverloadingPostIncrementUpdatesObjectWithCaps) {
+    Mystring a = {"all uppers"};
+    std::string expectValue {"ALL UPPERS"};
+
+    a++;
+
+    EXPECT_EQ (expectValue, a.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

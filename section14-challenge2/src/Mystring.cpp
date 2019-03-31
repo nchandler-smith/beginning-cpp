@@ -126,11 +126,17 @@ Mystring& operator*=(Mystring &lhs, const int multiplier){
     return lhs = lhs * multiplier;
 }
 
-Mystring& operator++(Mystring &obj){
+Mystring operator++(Mystring &obj){
     for(size_t i {}; i < obj.get_length(); i++) {
         *(obj.str + i) = std::toupper(obj.str[i]);
     }
     return obj;
+}
+
+Mystring operator++(Mystring& obj, int) {
+    Mystring temp = obj;
+    ++obj;
+    return temp;
 }
 
 // Display method
