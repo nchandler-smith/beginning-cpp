@@ -87,7 +87,7 @@ bool operator>(const Mystring &lhs, const Mystring &rhs) {
 
 Mystring operator-(const Mystring &obj) {
     int tempLength {obj.get_length()};
-    char *tempString = new char[obj.get_length()];
+    char *tempString = new char[obj.get_length()+1];
 
     for(size_t i {}; i < tempLength; i++) {
         *(tempString + i) = std::tolower(obj.get_str()[i]);
@@ -96,6 +96,18 @@ Mystring operator-(const Mystring &obj) {
 
     delete [] tempString;
     return returnValue;
+}
+
+Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
+    int tempLength {lhs.get_length() + rhs.get_length() + 1};
+    char *tempString = new char[tempLength];
+
+    std::strcpy(tempString, lhs.get_str());
+    std::strcat(tempString, rhs.get_str());
+
+    Mystring concat {tempString};
+    delete [] tempString;
+    return concat;
 }
 
 // Display method

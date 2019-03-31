@@ -75,6 +75,17 @@ TEST (MystringTest, OverloadUnaryMinusReturnsLowerCase) {
     EXPECT_EQ (expectedValue, actualValue.get_str());
 }
 
+TEST (MystringTest, OverloadingPlusReturnsConcatenates) {
+    Mystring a {"a"};
+    Mystring b {"b"};
+    Mystring actualValue {};
+    std::string expectedValue {"ab"};
+
+    actualValue = a + b;
+
+    EXPECT_EQ (expectedValue, actualValue.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -23,8 +23,8 @@ int main() {
     s1 = -s1;       
     cout << s1 << endl;               // frank              
 
-    // s1 = s1 + "*****";
-    // cout << s1 << endl;               // frank*****       
+    s1 = s1 + "*****";
+    cout << s1 << endl;               // frank*****       
     
     // s1 += "-----";                        // frank*****-----
     // cout << s1 << endl;
