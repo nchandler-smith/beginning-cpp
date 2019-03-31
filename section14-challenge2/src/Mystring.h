@@ -9,6 +9,7 @@ class Mystring
     friend bool operator!=(const Mystring &lhs, const Mystring &rhs);
     friend bool operator<(const Mystring &lhs, const Mystring &rhs);
     friend bool operator>(const Mystring &lhs, const Mystring &rhs);
+    friend Mystring operator-(const Mystring &object);
 
 private:
     char *str;      // pointer to a char[] that holds a C-style string

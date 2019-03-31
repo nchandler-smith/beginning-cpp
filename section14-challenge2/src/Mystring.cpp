@@ -85,6 +85,19 @@ bool operator>(const Mystring &lhs, const Mystring &rhs) {
     return notEqualTo && notLessThan;
 }
 
+Mystring operator-(const Mystring &obj) {
+    int tempLength {obj.get_length()};
+    char *tempString = new char[obj.get_length()];
+
+    for(size_t i {}; i < tempLength; i++) {
+        *(tempString + i) = std::tolower(obj.get_str()[i]);
+    }
+    Mystring returnValue {tempString};
+
+    delete [] tempString;
+    return returnValue;
+}
+
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
