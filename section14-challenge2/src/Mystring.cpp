@@ -115,6 +115,14 @@ Mystring& operator+=(Mystring &lhs, const Mystring &rhs){
     return lhs;
 }
 
+Mystring operator*(const Mystring &lhs, const int multiplier){
+    Mystring returnValue {};
+    for(int i {}; i < multiplier; i++) {
+        returnValue += lhs.get_str();
+    }
+    return returnValue;
+}
+
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
