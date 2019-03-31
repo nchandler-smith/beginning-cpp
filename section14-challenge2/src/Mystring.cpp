@@ -111,16 +111,19 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
 }
 
 Mystring& operator+=(Mystring &lhs, const Mystring &rhs){
-    lhs = lhs + rhs;
-    return lhs;
+    return lhs = lhs + rhs;
 }
 
 Mystring operator*(const Mystring &lhs, const int multiplier){
     Mystring returnValue {};
-    for(int i {}; i < multiplier; i++) {
+    for(size_t i {}; i < multiplier; i++) {
         returnValue += lhs.get_str();
     }
     return returnValue;
+}
+
+Mystring& operator*=(Mystring &lhs, const int multiplier){
+    return lhs = lhs * multiplier;
 }
 
 // Display method

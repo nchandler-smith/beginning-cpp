@@ -105,6 +105,15 @@ TEST (MystringTest, OverloadingStarIsConcatXTimes) {
     EXPECT_EQ (expectValue, a.get_str());
 }
 
+TEST (MystringTest, OverloadingStarEqualsReturnsConcatXTimesAssignment) {
+    Mystring a = {"abcdef"};
+    std::string expectValue = {"abcdefabcdefabcdefabcdefabcdef"};
+    
+    a *= 5;
+
+    EXPECT_EQ (expectValue, a.get_str());
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
