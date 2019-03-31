@@ -86,6 +86,15 @@ TEST (MystringTest, OverloadingPlusReturnsConcatenates) {
     EXPECT_EQ (expectedValue, actualValue.get_str());
 }
 
+TEST (MystringTest, OverloadingPlusEqualsReturnsConcatenateAssignment) {
+    Mystring a {"a"};
+    Mystring b {"b"};
+    std::string expectedValue {"ab"};
+
+    a += b;
+
+    EXPECT_EQ (expectedValue, a.get_str());
+}
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

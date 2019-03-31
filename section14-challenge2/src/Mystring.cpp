@@ -110,6 +110,11 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
     return concat;
 }
 
+Mystring& operator+=(Mystring &lhs, const Mystring &rhs){
+    lhs = lhs + rhs;
+    return lhs;
+}
+
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;

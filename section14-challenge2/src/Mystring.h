@@ -11,6 +11,7 @@ class Mystring
     friend bool operator>(const Mystring &lhs, const Mystring &rhs);
     friend Mystring operator-(const Mystring &object);
     friend Mystring operator+(const Mystring &lhs, const Mystring &rhs);
+    friend Mystring& operator+=(Mystring &lhs, const Mystring &rhs);
 
 private:
     char *str;      // pointer to a char[] that holds a C-style string
