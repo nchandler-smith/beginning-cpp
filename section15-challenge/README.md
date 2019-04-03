@@ -35,3 +35,19 @@ Deposit amount plus amount times interest rate.
 
 ### Overload insertion operator as non-member function
 Prints account name and balance.
+
+# Account Utilities
+### Display
+Displays Account objects in a vector of Account objects. Accepts vector of accounts.
+### Deposit
+Deposits supplied amount to each account object in the vector. Accepts vector of accounts and amount to deposit. Prints to screen and performs deposits.
+### Withdraw
+Withdraw amount from each Account object in vector. Accepts vector of accounts and amount to withdraw. Prints to screen and performs deposits
+
+# Savings Account Utilities
+### Display
+Displays Savings Account objects in a vector of Savings Account objects. Accepts vector of savings accounts.
+### Deposit
+Deposits suplied amount to each Savings Account object in the vector. Accepts vector of Savings Accounts and deposit amounts.
+### Withdraw
+Withdraw amount frmo each Savings Account object in a vector. Accepts vector of Savings Accounts and amount to withdraw.
