@@ -10,10 +10,10 @@ Much of the content from this section was provided without tests. The account, s
 Uses default account name and balance if none specified
 
 ### Deposit
-Returns false if amount is valid, i.e. > 0. Else returns true and adds amount to balance.
+Returns false if amount is invalid, i.e. < 0. Else returns true and adds amount to balance.
 
 ### Withdraw
-Returns false if _balance - amount < 0_. Else returns true and subtracts amount from balance.
+Returns false if remaining balance is invalid. _balance - amount < 0_. Else returns true and subtracts amount from balance.
 
 ### Get Balance
 Returns balance in account.
