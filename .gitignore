@@ -12,3 +12,8 @@ main_tests
 Section13Material
 main
 ipch
+Section-15-Inheritance-Source-code.zip
+Section15-Provided
+**/src/template
+**/src/main
+**/.DS_Store
