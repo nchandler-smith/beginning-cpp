@@ -21,3 +21,17 @@ Returns balance in account.
 ### Overload insertion operator as non-member function
 Uses signature below:
 `friend std::ostream &operator<<(std::ostream &os, const Account &account);`
+Prints account name and balance.
+
+# Savings Account
+- _static constant expression const char pointer_ **def_name**: "Unnamed Savings Account"
+- _static constant expression double_ **def_balance**: 0.0
+- _static constant expression double_ **def_int_rate**: 0.0;
+
+Sets default savings account name, balance, and interest rate if none specified.
+
+### Deposit
+Deposit amount plus amount times interest rate.
+
+### Overload insertion operator as non-member function
+Prints account name and balance.
