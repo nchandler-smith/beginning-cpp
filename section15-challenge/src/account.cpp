@@ -9,6 +9,10 @@ std::string Account::getName() {
 	return this->name;
 }
 
+bool Account::deposit(double amount) {
+	balance += amount;
+}
+
 double Account::getBalance() {
 	return this->balance;
 }

@@ -13,6 +13,7 @@ class Account {
     public:
         Account(std::string name=defaultName, double balance=defaultStartingBalance);
         std::string getName();
+        bool deposit(double amount);
         double getBalance();
 };
 
