@@ -3,7 +3,6 @@
 
 Account::Account()
  : name{"Unnamed Account"} {
-
  }
 
 std::string Account::getName() {
