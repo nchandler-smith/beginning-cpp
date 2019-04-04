@@ -2,6 +2,10 @@
 #include "../googletest/googlemock/include/gmock/gmock.h"
 #include "../src/account.h"
 
+#include <string>
+#include <iomanip>
+#include <sstream>
+
 class AccountTest : public ::testing::Test {
     // properties
     protected:
@@ -106,4 +110,17 @@ TEST_F(AccountTest, testWithdrawAmountMoreThanAccountBalanceReturnsFalse) {
     bool success = account.withdraw(withdrawAmount);
 
     EXPECT_FALSE(success);
+}
+
+TEST_F(AccountTest, testPrettyPrintReturnsAccountNameBalance) {
+    std::string name = TEST_ACCOUNT_NAME;
+    std::stringstream balance;
+    balance << std::fixed << std:: setprecision(2) << TEST_STARTING_BALANCE;
+    std::string balanceString = balance.str();
+    std::string expectedValue = "[Account: " + name + ": " + balanceString + "]";
+    std::string actualValue {};
+
+    actualValue  = account.prettyPrint();
+
+    EXPECT_EQ(expectedValue, actualValue);
 }

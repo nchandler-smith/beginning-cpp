@@ -9,13 +9,13 @@ class Account {
     static const constexpr double defaultStartingBalance {};
     std::string name {};
     double balance{};
-
     public:
         Account(std::string name=defaultName, double balance=defaultStartingBalance);
         std::string getName();
         bool deposit(double amount);
         bool withdraw(double amount);
         double getBalance();
+        std::string prettyPrint();
 };
 
 #endif // _ACCOUNT_H_

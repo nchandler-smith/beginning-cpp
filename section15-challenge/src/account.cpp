@@ -1,5 +1,14 @@
 #include "account.h"
 #include <string>
+#include <iomanip>
+#include <sstream>
+
+
+std::string doubleToString(double number, int precision) {
+	std::stringstream numberStream;
+	numberStream <<std::fixed << std::setprecision(precision) << number;
+	return numberStream.str();
+}
 
  Account::Account(std::string name, double balance)
  : name{name}, balance{balance} {
@@ -25,4 +34,10 @@ bool Account::withdraw(double amount) {
 
 double Account::getBalance() {
 	return this->balance;
+}
+
+std::string Account::prettyPrint() {
+	int precision {2};
+	std::string balanceString = doubleToString(this->balance, precision);
+	return "[Account: " + this->name + ": " + balanceString +"]";
 }
