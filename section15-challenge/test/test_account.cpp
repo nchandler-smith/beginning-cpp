@@ -4,8 +4,9 @@
 
 class AccountTest : public ::testing::Test {
     protected:
+        static const constexpr char* TEST_ACCOUNT_NAME {"Test Account"};
+        static const constexpr double TEST_STARTING_BALANCE {2500};
         Account account;
-
         AccountTest() {}
 
         void SetUp() override {}
@@ -48,12 +49,33 @@ TEST_F(AccountTest, testCreateAccountWithSpecifiedBalanceHasThatBalance) {
 
 TEST_F(AccountTest, testDepositAmountGreaterThan0AddsAmountToBalance) {
     double depositAmount = 5000;
-    double startingBalance = 2000;
-    account = Account("My Account", startingBalance);
-    double expectedBalance = startingBalance + depositAmount;
+    account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
+    double expectedBalance = TEST_STARTING_BALANCE + depositAmount;
 
     account.deposit(depositAmount);
     double actualBalance = account.getBalance();
 
     EXPECT_EQ(expectedBalance, actualBalance);
+}
+
+TEST_F(AccountTest, testDepositAmountGreaterThan0ReturnsTrue) {
+    double depositAmount = 5000;
+    account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
+    bool success {};
+
+    success = account.deposit(depositAmount);
+    double actualBalance = account.getBalance();
+
+    EXPECT_TRUE(success);
+}
+
+TEST_F(AccountTest, testDepositAmountLessThan0ReturnsFalse) {
+    double depositAmount = -1000;
+    account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
+    bool success {};
+
+    success = account.deposit(depositAmount);
+    double actualBalance = account.getBalance();
+
+    EXPECT_FALSE(success);
 }
