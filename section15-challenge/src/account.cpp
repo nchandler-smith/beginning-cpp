@@ -1,8 +1,8 @@
 #include "account.h"
 #include <string>
 
-Account::Account(std::string name)
- : name{name} {
+Account::Account()
+ : name{"Unnamed Account"} {
 
  }
 

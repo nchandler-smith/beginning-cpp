@@ -8,7 +8,7 @@ class Account {
     std::string name {};
 
     public:
-        Account(std::string name="Unnamed Account");
+        Account();
         std::string getName();
 };
 
