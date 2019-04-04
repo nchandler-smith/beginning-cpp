@@ -14,6 +14,7 @@ class Account {
         Account(std::string name=defaultName, double balance=defaultStartingBalance);
         std::string getName();
         bool deposit(double amount);
+        bool withdraw(double amount);
         double getBalance();
 };
 

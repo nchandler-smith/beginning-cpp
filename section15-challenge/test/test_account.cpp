@@ -37,51 +37,73 @@ TEST_F(AccountTest, testCreateAccountHasDefaultBalance) {
 }
 
 TEST_F(AccountTest, testAccountCreatedWithSpecifiedNameHasThatName) {
-    std::string expectedAccountName {"Nate's Account"};
+    std::string expectedAccountName = TEST_ACCOUNT_NAME;
 
     account = Account(expectedAccountName);
     std::string actualAccountName {account.getName()};
+
+    EXPECT_EQ(expectedAccountName, actualAccountName);
 }
 
 TEST_F(AccountTest, testCreateAccountWithSpecifiedBalanceHasThatBalance) {
-    std::string myAccountName {"Nates's Account"};
-    double expectedAccountBalance {1000};
+    double expectedAccountBalance = TEST_STARTING_BALANCE;
 
-    account = Account(myAccountName, expectedAccountBalance);
+    account = Account(TEST_ACCOUNT_NAME, expectedAccountBalance);
     double actualAccountBalance {account.getBalance()};
 
     EXPECT_EQ(expectedAccountBalance, actualAccountBalance);
 }
 
 TEST_F(AccountTest, testDepositAmountGreaterThan0AddsAmountToBalance) {
-    double depositAmount = 5000;
-    account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
-    double expectedBalance = TEST_STARTING_BALANCE + depositAmount;
+    double depositAmount {5000};
+    double expectedUpdatedBalance = TEST_STARTING_BALANCE + depositAmount;
 
     account.deposit(depositAmount);
-    double actualBalance = account.getBalance();
+    double actualUpdatedBalance = account.getBalance();
 
-    EXPECT_EQ(expectedBalance, actualBalance);
+    EXPECT_EQ(expectedUpdatedBalance, actualUpdatedBalance);
 }
 
 TEST_F(AccountTest, testDepositAmountGreaterThan0ReturnsTrue) {
-    double depositAmount = 5000;
-    account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
+    double validDepositAmount {1};
     bool success {};
 
-    success = account.deposit(depositAmount);
-    double actualBalance = account.getBalance();
+    success = account.deposit(validDepositAmount);
 
     EXPECT_TRUE(success);
 }
 
 TEST_F(AccountTest, testDepositAmountLessThan0ReturnsFalse) {
-    double depositAmount = -1000;
-    account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
+    double invalidDepositAmount {-1};
     bool success {};
 
-    success = account.deposit(depositAmount);
-    double actualBalance = account.getBalance();
+    success = account.deposit(invalidDepositAmount);
+
+    EXPECT_FALSE(success);
+}
+
+TEST_F(AccountTest, testWithdrawAmountFromAccountSubtractsAmountFromBalance) {
+    double withdrawAmount = {100};
+    double expectedUpdatedBalance = account.getBalance() - withdrawAmount;
+    
+    account.withdraw(withdrawAmount);
+    double actualUpdatedBalance = account.getBalance();
+
+    EXPECT_EQ(expectedUpdatedBalance, actualUpdatedBalance);
+}
+
+TEST_F(AccountTest, testWithdrawAmountLessThanAccountBalanceReturnsTrue) {
+    double withdrawAmount = account.getBalance() - 0.01;
+
+    bool success = account.withdraw(withdrawAmount);
+
+    EXPECT_TRUE(success);
+}
+
+TEST_F(AccountTest, testWithdrawAmountMoreThanAccountBalanceReturnsFalse) {
+    double withdrawAmount = account.getBalance() + 0.01;
+
+    bool success = account.withdraw(withdrawAmount);
 
     EXPECT_FALSE(success);
 }
