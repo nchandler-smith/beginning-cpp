@@ -45,3 +45,15 @@ TEST_F(AccountTest, testCreateAccountWithSpecifiedBalanceHasThatBalance) {
 
     EXPECT_EQ(expectedAccountBalance, actualAccountBalance);
 }
+
+TEST_F(AccountTest, testDepositAmountGreaterThan0AddsAmountToBalance) {
+    double depositAmount = 5000;
+    double startingBalance = 2000;
+    account = Account("My Account", startingBalance);
+    double expectedBalance = startingBalance + depositAmount;
+
+    account.deposit(depositAmount);
+    double actualBalance = account.getBalance();
+
+    EXPECT_EQ(expectedBalance, actualBalance);
+}
