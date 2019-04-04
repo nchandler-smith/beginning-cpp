@@ -50,4 +50,4 @@ Displays Savings Account objects in a vector of Savings Account objects. Accepts
 ### Deposit
 Deposits suplied amount to each Savings Account object in the vector. Accepts vector of Savings Accounts and deposit amounts.
 ### Withdraw
-Withdraw amount frmo each Savings Account object in a vector. Accepts vector of Savings Accounts and amount to withdraw.
+Withdraw amount from each Savings Account object in a vector. Accepts vector of Savings Accounts and amount to withdraw.
