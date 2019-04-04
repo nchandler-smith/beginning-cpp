@@ -3,13 +3,19 @@
 #include "../src/account.h"
 
 class AccountTest : public ::testing::Test {
+    // properties
     protected:
         static const constexpr char* TEST_ACCOUNT_NAME {"Test Account"};
         static const constexpr double TEST_STARTING_BALANCE {2500};
         Account account;
+        
+    // methods
         AccountTest() {}
 
-        void SetUp() override {}
+        void SetUp() override {
+            account = Account(TEST_ACCOUNT_NAME, TEST_STARTING_BALANCE);
+        }
+        
 };
 
 TEST_F(AccountTest, testCreateAccountHasDefaultName) {
