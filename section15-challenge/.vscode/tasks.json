@@ -11,7 +11,7 @@
         {
             "label": "build and run tests",
             "type": "shell",
-            "command": "cmake . && make &&  ./test/main_tests",
+            "command": "cmake . && make &&  ./test/test_runner",
             "group": {
                 "kind": "build",
                 "isDefault": true
