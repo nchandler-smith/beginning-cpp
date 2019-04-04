@@ -10,6 +10,8 @@ class Account {
 
     public:
         Account();
+        Account(std::string name);
+        Account(std::string name, double balance);
         std::string getName();
         double getBalance();
 };

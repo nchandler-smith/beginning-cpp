@@ -30,8 +30,18 @@ TEST_F(AccountTest, testCreateAccountHasDefaultBalance) {
 }
 
 TEST_F(AccountTest, testAccountCreatedWithSpecifiedNameHasThatName) {
-    std::string expectedAccountName {"Buncha Bucks"};
+    std::string expectedAccountName {"Nate's Account"};
 
     account = Account(expectedAccountName);
     std::string actualAccountName {account.getName()};
+}
+
+TEST_F(AccountTest, testCreateAccountWithSpecifiedBalanceHasThatBalance) {
+    std::string myAccountName {"Nates's Account"};
+    double expectedAccountBalance {1000};
+
+    account = Account(myAccountName, expectedAccountBalance);
+    double actualAccountBalance {account.getBalance()};
+
+    EXPECT_EQ(expectedAccountBalance, actualAccountBalance);
 }
