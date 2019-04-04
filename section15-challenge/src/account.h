@@ -5,13 +5,13 @@
 
 class Account {
     private:
+    static const constexpr char* defaultName {"Unnamed Account"};
+    static const constexpr double defaultStartingBalance {};
     std::string name {};
     double balance{};
 
     public:
-        Account();
-        Account(std::string name);
-        Account(std::string name, double balance);
+        Account(std::string name=defaultName, double balance=defaultStartingBalance);
         std::string getName();
         double getBalance();
 };

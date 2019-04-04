@@ -8,14 +8,13 @@ class AccountTest : public ::testing::Test {
 
         AccountTest() {}
 
-        void SetUp() override {
-            account = Account();
-        }
+        void SetUp() override {}
 };
 
 TEST_F(AccountTest, testCreateAccountHasDefaultName) {
     std::string expectedDefaultName {"Unnamed Account"};
     
+    account = Account();
     std::string actualDefaultName = account.getName();
 
     EXPECT_EQ(expectedDefaultName, actualDefaultName);
@@ -24,6 +23,7 @@ TEST_F(AccountTest, testCreateAccountHasDefaultName) {
 TEST_F(AccountTest, testCreateAccountHasDefaultBalance) {
     double expectedDefaultBalance {0};
     
+    account = Account();
     double actualDefaultBalance = account.getBalance();
 
     EXPECT_EQ(expectedDefaultBalance, actualDefaultBalance);
