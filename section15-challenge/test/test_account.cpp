@@ -3,17 +3,35 @@
 #include "../src/account.h"
 
 class AccountTest : public ::testing::Test {
-    //access modifiers
+    protected:
+        Account account;
 
-    //protected:
-        // void SetUp() override {}
+        AccountTest() {}
+
+        void SetUp() override {
+            account = Account();
+        }
 };
 
-TEST_F(AccountTest, testAccountHasDefaultName) {
+TEST_F(AccountTest, testCreateAccountHasDefaultName) {
     std::string expectedDefaultName {"Unnamed Account"};
-    Account account = Account();
     
     std::string actualDefaultName = account.getName();
 
     EXPECT_EQ(expectedDefaultName, actualDefaultName);
-    } 
+}
+
+TEST_F(AccountTest, testCreateAccountHasDefaultBalance) {
+    double expectedDefaultBalance {0};
+    
+    double actualDefaultBalance = account.getBalance();
+
+    EXPECT_EQ(expectedDefaultBalance, actualDefaultBalance);
+}
+
+TEST_F(AccountTest, testAccountCreatedWithSpecifiedNameHasThatName) {
+    std::string expectedAccountName {"Buncha Bucks"};
+
+    account = Account(expectedAccountName);
+    std::string actualAccountName {account.getName()};
+}

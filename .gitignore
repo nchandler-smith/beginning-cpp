@@ -17,3 +17,4 @@ Section15-Provided
 **/src/template
 **/src/main
 **/.DS_Store
+**/test/test_runner
