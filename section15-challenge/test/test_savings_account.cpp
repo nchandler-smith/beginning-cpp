@@ -1,7 +1,7 @@
 #include "../googletest/googletest/include/gtest/gtest.h"
 #include "../googletest/googlemock/include/gmock/gmock.h"
-#include "../src/account.h"
+#include "../src/savings_account.h"
 
-TEST(Account, Test) {
+TEST(SavingsAccount, Test) {
     EXPECT_TRUE(true);
 } 

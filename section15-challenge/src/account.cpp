@@ -1,3 +1,3 @@
-void helper() {
+void account() {
 	return;
 }
