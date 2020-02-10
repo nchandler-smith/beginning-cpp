@@ -1,7 +1,7 @@
-#include "../googletest/googletest/include/gtest/gtest.h"
-#include "../googletest/googlemock/include/gmock/gmock.h"
+#include "../../../../tools/googletest/googletest/include/gtest/gtest.h"
+#include "../../../../tools/googletest/googlemock/include/gmock/gmock.h"
 #include "../src/MovieLibrary.h"
-#include "../src/Movie.h"
+#include "../src/movie.h"
 #include <vector>
 
 TEST (MovieLibraryTest, ByDefaultMovieLibraryIsEmpty) {
