@@ -4,10 +4,11 @@ project (template)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(GTEST_DIRECTORY ../../../tools/googletest)
 
 # Add googletest directly to our build. This defines
 # the gtest and gtest_main targets.
-add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest)
+add_subdirectory(${GTEST_DIRECTORY} ../build)
 
 include_directories(src)
 
