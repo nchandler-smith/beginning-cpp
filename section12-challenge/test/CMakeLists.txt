@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.1)
 
 set(TARGET main_tests)
+set(GTEST_DIRECTORY ../../../tools/googletest)
 
 add_executable(${TARGET} test_main.cpp)
 
 enable_testing()
-include_directories(../../../tools/googletest/googletest/include ../../../tools/googletest/googlemock/include ../src)
-link_directories(../../../tools/googletest/lib ../src)
+include_directories(${GTEST_DIRECTORY}/googletest/include ${GTEST_DIRECTORY}/googlemock/include ../src)
+link_directories(${GTEST_DIRECTORY}/lib ../src)
 
 
 # Now simply link against gtest or gtest_main as needed. 
