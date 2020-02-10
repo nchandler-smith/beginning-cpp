@@ -5,9 +5,8 @@ set(TARGET main_tests)
 add_executable(${TARGET} test_main.cpp)
 
 enable_testing()
-include_directories(../googletest/googletest/include ../googletest/googlemock/include ../src)
-find_package(GTest REQUIRED) 
-link_directories(../googletest/lib ../src)
+include_directories(../../../tools/googletest/googletest/include ../../../tools/googletest/googlemock/include ../src)
+link_directories(../../../tools/googletest/lib ../src)
 
 
 # Now simply link against gtest or gtest_main as needed. 
