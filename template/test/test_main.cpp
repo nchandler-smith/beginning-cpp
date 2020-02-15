@@ -1,5 +1,5 @@
-#include "../googletest/googletest/include/gtest/gtest.h"
-#include "../googletest/googlemock/include/gmock/gmock.h"
+#include "../../../../tools/googletest/googletest/include/gtest/gtest.h"
+#include "../../../../tools/googletest/googlemock/include/gmock/gmock.h"
 #include "../src/helper.h"
 
 TEST (HelperTest, Help) {
