@@ -7,3 +7,5 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(GTEST_DIRECTORY ../../../tools/googletest)
 
 add_subdirectory(${GTEST_DIRECTORY} ../build)
+add_subdirectory(src)
+add_subdirectory(test)
