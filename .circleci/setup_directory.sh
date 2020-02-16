@@ -14,5 +14,5 @@ mkdir courses
 cd courses
 mkdir beginning-cpp
 cd beginning-cpp
-mv /root/project .
+mv /root/project/* .
 ls -a
