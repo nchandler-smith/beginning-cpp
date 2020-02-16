@@ -2,7 +2,13 @@
 #include "random_integer.h"
 
 TEST (RandomIntegerTest, Generate) {
-    EXPECT_TRUE (true);
+    RandomInteger* randomInteger = new RandomInteger();
+    int lowerBound = 1;
+    int upperBound = 10;
+
+    int randomNumber = randomInteger->generate(lowerBound, upperBound);
+    ASSERT_LE(randomNumber, upperBound);
+    ASSERT_GE(randomNumber, lowerBound);
 }
 
 int main(int argc, char **argv) {
