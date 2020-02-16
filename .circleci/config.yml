@@ -15,12 +15,24 @@ jobs:
       - run:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
-    #   - run:
-    #       name: Creating Build Files
-    #       command: 'cmake -H. -Bbuild'
-    #   - run:
-    #       name: Creating Binary Files
-    #       command: 'cmake --build build'
-    #   - run:
-    #       name: Point Unit Testing
-    #       command: './bin/point_test'
+      - run:
+          name: Install git
+          command: 'apt-get update && sudo apt-get install -y git'
+      - run:
+          name: Create folder structure mirroring development
+          command: 'bash /root/project/.circleci/setup_directory.sh'
+      - run:
+          name: Checkout googletest
+          command: 'git clone https://github.com/google/googletest.git /root/tools/googletest/'
+      - run:
+          name: Build googletest
+          command: 'cd /root/tools/googletest/googletest && cmake . && make'
+      - run:
+          name: Build googlemock
+          command: 'cd /root/tools/googletest/googlemock && cmake . && make'
+      - run:
+          name: Build all the project things
+          command: 'cd /root/courses/beginning-cpp/ && cmake . && make'
+      - run:
+          name: Run utils/random_integer tests
+          command: 'cd /root/courses/beginning-cpp/utils/random_integer/test && pwd && ls -a && ./random_integer_test'
