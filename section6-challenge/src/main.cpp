@@ -1,9 +1,13 @@
 #include <iostream>
-#include "estimatiion_tool.h"
+#include "estimation_tool.h"
+#include <random>
 
 using namespace std;
 
 int main() {
-    cout << "Hello, World!";
+
+
+    for(int n=0; n<10; ++n)
+        std::cout << distr(eng) << "\n";
     return 0;
 }
