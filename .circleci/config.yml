@@ -20,13 +20,19 @@ jobs:
           command: 'apt-get update && sudo apt-get install -y git'
       - run:
           name: Create folder structure mirroring development
-          command: 'pwd && ls -a && cd /root/project/.circleci && bash /root/project/.circleci/setup_directory.sh'
+          command: 'bash /root/project/.circleci/setup_directory.sh'
       - run:
           name: Checkout googletest
           command: 'git clone https://github.com/google/googletest.git /root/tools/'
       - run:
+          name: Build googletest
+          command: 'cd /root/tools/googletest/googletest && cmake . && make'
+      - run:
+          name: Build googlemock
+          command: 'cd /root/tools/googletest/googlemock && cmake . && make'
+      - run:
           name: Build all the project things
-          command: 'cmake . && make'
+          command: 'cd /root/courses/beginning-cpp/ cmake . && make'
       - run:
           name: Run utils/random_integer tests
           command: './utils/random_integer/test/random_integer_test'

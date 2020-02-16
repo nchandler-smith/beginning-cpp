@@ -15,3 +15,4 @@ cd courses
 mkdir beginning-cpp
 cd beginning-cpp
 mv /root/project .
+ls -a
