@@ -6,9 +6,12 @@ TEST (RandomIntegerTest, Generate) {
     int lowerBound = 1;
     int upperBound = 10;
 
-    int randomNumber = randomInteger->generate(lowerBound, upperBound);
-    ASSERT_LE(randomNumber, upperBound);
-    ASSERT_GE(randomNumber, lowerBound);
+    for(int i=0; i < 1000; i++)
+    {
+        int randomNumber = randomInteger->generate(lowerBound, upperBound);
+        ASSERT_LE(randomNumber, upperBound);
+        ASSERT_GE(randomNumber, lowerBound);
+    }
 }
 
 int main(int argc, char **argv) {
