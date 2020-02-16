@@ -35,4 +35,4 @@ jobs:
           command: 'cd /root/courses/beginning-cpp/ && cmake . && make'
       - run:
           name: Run utils/random_integer tests
-          command: 'cd /root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
+          command: 'pwd && ls -a && cd /root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
