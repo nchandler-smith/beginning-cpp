@@ -16,17 +16,11 @@ jobs:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
       - run:
-          name: Build all the things
+          name: Checkout googletest
+          command: git clone https://github.com/google/googletest.git && pwd
+      - run:
+          name: Build all the project things
           command: 'cmake . && make'
       - run:
           name: Run utils/random_integer tests
           command: './utils/random_integer/test/random_integer_test'
-    #   - run:
-    #       name: Creating Build Files
-    #       command: 'cmake -H. -Bbuild'
-    #   - run:
-    #       name: Creating Binary Files
-    #       command: 'cmake --build build'
-    #   - run:
-    #       name: Point Unit Testing
-    #       command: './bin/point_test'
