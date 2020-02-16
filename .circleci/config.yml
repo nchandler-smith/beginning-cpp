@@ -15,6 +15,12 @@ jobs:
       - run:
           name: Install CMAKE
           command: 'apt-get update && sudo apt-get install -y cmake'
+      -run:
+          name: Build all thing things
+          command: 'cmake . && make'
+      - run:
+          name: Run utils/random_integer tests
+          command: './utils/random_integer/test/random_integer_test'
     #   - run:
     #       name: Creating Build Files
     #       command: 'cmake -H. -Bbuild'
