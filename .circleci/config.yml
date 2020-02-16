@@ -32,7 +32,7 @@ jobs:
           command: 'cd /root/tools/googletest/googlemock && cmake . && make'
       - run:
           name: Build all the project things
-          command: 'cd /root/courses/beginning-cpp/ && cmake . && make'
+          command: 'pwd && ls -a && cd /root/courses/beginning-cpp/ && cmake . && make'
       - run:
           name: Run utils/random_integer tests
-          command: 'pwd && ls -a && cd /root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
+          command: 'cd /root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
