@@ -38,4 +38,4 @@ jobs:
           command: '/root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
       - run:
           name: Run section6-challenge tests
-          command: 'cd /root/courses/beginning-cpp/section6-challenge/test/test_estimation_tool'
+          command: '/root/courses/beginning-cpp/section6-challenge/test/test_estimation_tool'
