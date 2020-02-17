@@ -8,6 +8,6 @@ int main() {
 
 
     for(int n=0; n<10; ++n)
-        std::cout << distr(eng) << "\n";
+        std::cout << "Hello World!";
     return 0;
 }
