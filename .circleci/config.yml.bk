@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     docker:
@@ -32,23 +33,9 @@ jobs:
       - run:
           name: Build all the project things
           command: 'cd /root/courses/beginning-cpp/ && cmake . && make'
-
-  test:
-    docker:
-      - image: "debian:stretch"
-    steps:
       - run:
           name: Run random integer utility tests
           command: '/root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
       - run:
           name: Run section6-challenge tests
           command: '/root/courses/beginning-cpp/section6-challenge/test/test_estimation_tool'
-
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
