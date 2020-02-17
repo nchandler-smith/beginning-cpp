@@ -37,5 +37,8 @@ jobs:
           name: Run random integer utility tests
           command: '/root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
       - run:
+          name: Run random integer utility example
+          command: '/root/courses/beginning-cpp/utils/random_integer/src/random_integer_example'
+      - run:
           name: Run section6-challenge tests
           command: '/root/courses/beginning-cpp/section6-challenge/test/test_estimation_tool'
