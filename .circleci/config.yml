@@ -37,6 +37,10 @@ jobs:
     docker:
       - image: "debian:stretch"
     steps:
+      - checkout
+      - run:
+          name: Troubleshooting
+          command: 'pwd && ls -a'
       - run:
           name: Run random integer utility tests
           command: '/root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
