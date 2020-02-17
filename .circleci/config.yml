@@ -40,7 +40,9 @@ jobs:
       - run:
           name: Troubleshooting
           command: 'pwd && ls -a'
-          command: 'root/project/utils/random_integer/test/'
+      - run:
+          name: More Troubleshooting
+          command: 'cd root/project/utils/random_integer/test/ && pwd && ls -a'
       - run:
           name: Run random integer utility tests
           command: '/root/courses/beginning-cpp/utils/random_integer/test/random_integer_test'
