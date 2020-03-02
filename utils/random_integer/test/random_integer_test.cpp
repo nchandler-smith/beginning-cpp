@@ -2,13 +2,13 @@
 #include "random_integer.h"
 
 TEST (RandomIntegerTest, Generate) {
-    RandomInteger* randomInteger = new RandomInteger();
+    RandomInteger randomInteger;
     int lowerBound = 1;
     int upperBound = 10;
 
     for(int i=0; i < 1000; i++)
     {
-        int randomNumber = randomInteger->generate(lowerBound, upperBound);
+        int randomNumber = randomInteger.generate(lowerBound, upperBound);
         ASSERT_LE(randomNumber, upperBound);
         ASSERT_GE(randomNumber, lowerBound);
     }
