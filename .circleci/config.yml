@@ -35,4 +35,4 @@ jobs:
           command: 'cd /root/courses/beginning-cpp/ && cmake . && make'
       - run:
           name: Run tests
-          command: 'cd root/courses/beginning-cpp && bash run_tests.sh'
+          command: 'cd /root/courses/beginning-cpp/ && bash run_tests.sh'
