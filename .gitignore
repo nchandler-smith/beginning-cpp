@@ -16,3 +16,4 @@ ipch
 build/
 bin/
 downloads/
+**/.idea
